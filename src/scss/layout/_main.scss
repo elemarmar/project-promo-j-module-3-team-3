@@ -1,0 +1,72 @@
+.page__main {
+  height: 458px;
+  background-color: $color-background;
+}
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 458px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 95px 35px 30px;
+  &__title {
+    width: 250px;
+    height: 63px;
+    margin-bottom: 35.4px;
+    &__img {
+      width: 100%;
+    }
+  }
+  &__text {
+    margin-bottom: 17.8px;
+    &__h2 {
+      font-family: $font-title;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: $color-secondary;
+    }
+    &__p {
+      font-family: $font-primary;
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: $color-primary;
+    }
+  }
+  &__menu {
+    width: 268px;
+    height: 73.8px;
+    border-radius: 4px;
+    border: solid 1.6px rgba(225, 115, 52, 0.21);
+    // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
+    margin-bottom: 38.6px;
+    li {
+      display: inline-block;
+    }
+    &__icon {
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: $color-secondary;
+      display: block;
+    }
+    &__text {
+      font-family: $font-primary;
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+  }
+  &__button {
+    width: 129px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: $color-palete1-normal;
+    border: $color-palete1-normal;
+    color: $color-light;
+    font-family: $font-primary;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}

@@ -87,3 +87,10 @@ img:not([alt]) {
   text-decoration: none;
   text-align: center;
 }
+
+* {
+  box-sizing: border-box;
+  color: inherit;
+  list-style-type: none;
+  padding: 0;
+}
