@@ -1,5 +1,6 @@
 .page__main {
   background-color: $color-background;
+  text-align: center;
 }
 .main {
   width: 100%;
@@ -41,6 +42,10 @@
     border: solid 1.6px rgba(225, 115, 52, 0.21);
     // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
     margin-bottom: 38.6px;
+    padding: 15px 20px 17.8px;
+    ul {
+      margin: 0;
+    }
     li {
       display: inline-block;
       width: 60px;
@@ -96,9 +101,8 @@
       width: 325px;
       height: 86px;
       border-radius: 5px;
-      border: solid 2px;
+      border: solid 2px rgba(225, 115, 52, 0.21);
       margin-bottom: 186px;
-      padding: 15px 20px 17.8px;
 
       &__icon {
         font-size: 1.75rem;
@@ -107,4 +111,5 @@
         font-size: 1rem;
       }
     }
+  }
 }
