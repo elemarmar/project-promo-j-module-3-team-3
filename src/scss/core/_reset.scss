@@ -6,8 +6,8 @@
 }
 
 /* Remove default padding */
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -85,5 +85,9 @@ img:not([alt]) {
 }
 * {
   text-decoration: none;
-  text-align: center;
 }
+
+a {
+    color: inherit;
+}
+
