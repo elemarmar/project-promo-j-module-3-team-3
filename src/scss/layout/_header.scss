@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media all and (min-width: 768px) {
+    align-items: flex-start;
+    padding-left: 40px;
+  }
+
+  &__main {
+    height: 50px;
+    width: 201px;
+  }
+}
