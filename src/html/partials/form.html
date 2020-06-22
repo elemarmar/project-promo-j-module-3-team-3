@@ -1,10 +1,13 @@
 <form class="form" action="" method="post">
   <div class="design">
-    <h3>Diseña</h3>
+    <div class="container__design">
+      <i class="main__menu-icon far fa-object-ungroup"></i>
+      <h3>Diseña</h3>
+    </div>
     <div class="palettes__container">
       <label for="palettes">Colores</label>
       <div class="palettes__options">
-        <div class="option">
+        <div class="option option1">
           <input
             type="radio"
             id="palettes"
@@ -16,7 +19,7 @@
           <div class="palette__color"></div>
           <div class="palette__color"></div>
         </div>
-        <div class="option">
+        <div class="option option2">
           <input
             type="radio"
             id="palettes"
@@ -28,7 +31,7 @@
           <div class="palette__color"></div>
           <div class="palette__color"></div>
         </div>
-        <div class="option">
+        <div class="option option3">
           <input
             type="radio"
             id="palettes"
@@ -44,7 +47,10 @@
     </div>
   </div>
   <div class="fill">
-    <h3>Rellena</h3>
+    <div class="container__fill">
+      <i class="main__menu-icon far fa-keyboard"></i>
+      <h3>Rellena</h3>
+    </div>
     <label for="name">Nombre completo</label>
     <input
       type="text"
@@ -111,5 +117,9 @@
       id="github"
       name="github"
     />
+  </div>
+  <div class="share">
+    <i class="fa fa-share-alt" aria-hidden="true"></i>
+    <h3>Comparte</h3>
   </div>
 </form>

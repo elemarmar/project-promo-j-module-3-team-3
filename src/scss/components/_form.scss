@@ -1,12 +1,20 @@
 .design {
-  h3 {
-    text-transform: uppercase;
+  .container__design {
+    display: flex;
+
+    h3 {
+      text-transform: uppercase;
+      color: $color-text;
+      font-size: 18px;
+    }
   }
   label {
     text-transform: uppercase;
+    font-size: 14px;
   }
   .palettes__container {
     display: flex;
+    justify-content: space-between;
 
     input {
       display: inline-block;
@@ -15,13 +23,48 @@
       display: inline-block;
       height: 25px;
       width: 30px;
-      border: 1px solid red;
     }
     .palettes__options {
       .option {
         display: flex;
         align-items: center;
         margin: 20px;
+        input {
+          margin-right: 10px;
+        }
+      }
+      .option1 {
+        .palette__color:nth-child(1n) {
+          background-color: $color-palete1-normal;
+        }
+        .palette__color:nth-child(2n) {
+          background-color: $color-primary;
+        }
+        .palette__color:nth-child(4n) {
+          background-color: $color-palete1-light;
+        }
+      }
+      .option2 {
+        .palette__color:nth-child(1n) {
+          background-color: $color-palete2-normal;
+        }
+        .palette__color:nth-child(2n) {
+          background-color: $color-palete2-dark;
+        }
+        .palette__color:nth-child(4n) {
+          background-color: $color-palete2-light;
+        }
+      }
+      .option3 {
+        .palette__color:nth-child(1n) {
+          background-color: $color-palete3-normal;
+        }
+        .palette__color:nth-child(2n) {
+          background-color: $color-palete3-dark;
+        }
+        .palette__color:nth-child(4n) {
+          background-color: $color-palete3-light;
+        }
       }
     }
   }
@@ -30,8 +73,14 @@
 .fill {
   display: flex;
   flex-direction: column;
-  h3 {
-    text-transform: uppercase;
+  .container__fill {
+    display: flex;
+
+    h3 {
+      text-transform: uppercase;
+      color: $color-text;
+      font-size: 18px;
+    }
   }
   input {
     font-size: 14px;
@@ -71,4 +120,19 @@
     font-size: 14px;
     margin-top: 20px;
   }
+}
+.share {
+  display: flex;
+  h3 {
+    text-transform: uppercase;
+    color: $color-text;
+    font-size: 18px;
+  }
+}
+i {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: $color-secondary;
+  margin-right: 10px;
 }
