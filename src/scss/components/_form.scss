@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  input {
+    font-size: 14px;
+    line-height: 30px;
+    border: 1px solid $color-palete1-light;
+    &:focus {
+      outline-color: $color-palete1-normal;
+    }
+  }
+  .container-image {
+    display: flex;
+
+    .btn-addimage {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      width: 140px;
+      height: 30px;
+      background-color: $color-secondary;
+      color: $color-light;
+      border-radius: 3px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    }
+
+    .btn-tickimage {
+      border: 1px solid $color-palete1-light;
+      height: 30px;
+      width: 30px;
+      margin-left: 20px;
+      .btn-selectfile {
+        display: inline-block;
+        width: 30px;
+      }
+    }
+  }
+  label {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}

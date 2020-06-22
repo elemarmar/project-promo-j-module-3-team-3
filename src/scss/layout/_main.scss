@@ -1,0 +1,128 @@
+.page__main {
+  background-color: $color-background;
+  text-align: center;
+}
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 458px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 95px 35px 30px;
+  &__title {
+    width: 250px;
+    height: 63px;
+    margin-bottom: 35.4px;
+    &-img {
+      width: 100%;
+    }
+  }
+  &__text {
+    margin-bottom: 17.8px;
+    &-h2 {
+      font-family: $font-title;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: $color-secondary;
+    }
+    &-p {
+      font-family: $font-primary;
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: $color-primary;
+    }
+  }
+  &__menu {
+    width: 268px;
+    height: 73.8px;
+    border-radius: 4px;
+    border: solid 1.6px rgba(225, 115, 52, 0.21);
+    // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
+
+    padding: 15px 20px 17.8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+
+    &-list {
+      width: 60px;
+      height: 48.8px;
+    }
+    &-icon {
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: $color-secondary;
+    }
+    &-text {
+      font-family: $font-primary;
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+    .item-1 {
+      grid-column: 1 / 2;
+    }
+    .item-2 {
+      grid-column: 2 / 3;
+    }
+    .item-3 {
+      grid-column: 3 / 4;
+    }
+  }
+  &__button {
+    width: 129px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: $color-palete1-normal;
+    border: $color-palete1-normal;
+    color: $color-light;
+    font-family: $font-primary;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 38.6px;
+  }
+}
+
+@include tablet {
+  .main {
+    height: 963px;
+    padding: 350px 174px 59px 175px;
+    &__title {
+      width: 419px;
+      height: 105px;
+      margin-bottom: 31px;
+    }
+    &__text {
+      margin-bottom: 27px;
+      &-h2 {
+        font-size: 1.5rem;
+      }
+      &-p {
+        font-size: 1rem;
+      }
+    }
+    &__menu {
+      width: 325px;
+      height: 86px;
+      border-radius: 5px;
+      border: solid 2px rgba(225, 115, 52, 0.21);
+      grid-column-gap: 30px;
+      &-list {
+        width: 75px;
+        height: 61px;
+      }
+      &-icon {
+        font-size: 1.75rem;
+      }
+      &-text {
+        font-size: 1rem;
+      }
+    }
+    &__button {
+      margin-top: 186px;
+    }
+  }
+}
