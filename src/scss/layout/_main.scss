@@ -37,7 +37,7 @@
   }
   &__menu {
     width: 268px;
-    height: 73.8px;
+    // height: 73.8px;
     border-radius: 4px;
     border: solid 1.6px rgba(225, 115, 52, 0.21);
     // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
@@ -50,6 +50,9 @@
     &-list {
       width: 60px;
       height: 48.8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     &-icon {
       font-size: 1.4rem;
@@ -83,6 +86,7 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 38.6px;
+    padding: 10px 20px;
   }
 }
 
@@ -106,7 +110,7 @@
     }
     &__menu {
       width: 325px;
-      height: 86px;
+      // height: 86px;
       border-radius: 5px;
       border: solid 2px rgba(225, 115, 52, 0.21);
       grid-column-gap: 30px;
