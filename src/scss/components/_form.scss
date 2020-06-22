@@ -1,6 +1,38 @@
-.form {
+.design {
+  h3 {
+    text-transform: uppercase;
+  }
+  label {
+    text-transform: uppercase;
+  }
+  .palettes__container {
+    display: flex;
+
+    input {
+      display: inline-block;
+    }
+    .palette__color {
+      display: inline-block;
+      height: 25px;
+      width: 30px;
+      border: 1px solid red;
+    }
+    .palettes__options {
+      .option {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+      }
+    }
+  }
+}
+
+.fill {
   display: flex;
   flex-direction: column;
+  h3 {
+    text-transform: uppercase;
+  }
   input {
     font-size: 14px;
     line-height: 30px;

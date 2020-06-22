@@ -1,12 +1,13 @@
 .page__main {
   background-color: $color-background;
   text-align: center;
+  flex-grow: 1;
 }
 .main {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  height: 458px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +93,7 @@
 
 @include tablet {
   .main {
-    height: 963px;
+    // height: 963px;
     padding: 350px 174px 59px 175px;
     &__title {
       width: 419px;

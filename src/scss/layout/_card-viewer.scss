@@ -3,114 +3,109 @@
 ****************************/
 
 .card__viewer {
-    height: 457px;
-    width: 320px;
-    padding-top: 38px;
-    background-image: linear-gradient(to bottom, #bfcdd0, $color-background-card2);
-    text-align: left;
+  height: 457px;
+  // width: 320px;
+  width: 100%;
+  padding-top: 38px;
+  background-image: linear-gradient(
+    to bottom,
+    #bfcdd0,
+    $color-background-card2
+  );
+  text-align: left;
 
-    @include tablet {
-        height: 812px;
-        width: 329px;
-        padding-top: 173px;
-    }
+  @include tablet {
+    height: 812px;
+    width: 329px;
+    padding-top: 173px;
+  }
 
-    @include desktop {
-        width: 585px;
-    }
+  @include desktop {
+    width: 585px;
+  }
 
-
-    
-    /********************
+  /********************
     *      Wrapper      *
     ********************/
-    .wrapper {
-        margin: auto;
-        width: 240px;
-        //margin: 0 35px 0 45px;  Qué preferimos?
+  .wrapper {
+    margin: auto;
+    width: 240px;
+    //margin: 0 35px 0 45px;  Qué preferimos?
 
-        @include tablet {
-            // margin: auto; depende de preferencia
-        }
+    @include tablet {
+      // margin: auto; depende de preferencia
     }
+  }
 
-    /**************************
+  /**************************
     *      Card: general      *
     **************************/
-    &--card {
-        width: 100%;
-        height: 329px;
-        margin-top: 20px;
-        padding: 21px 0 12px;
-        border-radius: 2px;
-        box-shadow: 0 1px 10px 0 rgba($color-dark,.8), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
-        background-color: $color-light;
-    }
+  &--card {
+    width: 100%;
+    height: 329px;
+    margin-top: 20px;
+    padding: 21px 0 12px;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 0 rgba($color-dark, 0.8),
+      0 1px 3px 0 rgba(0, 0, 0, 0.35);
+    background-color: $color-light;
+  }
 }
 
-
 .card {
-    /******************************************
+  /******************************************
     *      Card text: name & description      *
     ******************************************/
-    &__text {
-        margin-bottom: 10px;
-        padding: 0 15px 0 20px;
-        border-left: solid 5px $color-palete1-normal;
-        font-family: $font-cards;
+  &__text {
+    margin-bottom: 10px;
+    padding: 0 15px 0 20px;
+    border-left: solid 5px $color-palete1-normal;
+    font-family: $font-cards;
 
-
-        &--name {
-            color: $color-primary;
-            font-size: 18px;
-            line-height: 1.11;
-            padding-bottom: 4px;
-        }
-
-        &--description {
-            color: $color-text;
-            line-height: 1.25;
-        }
-
+    &--name {
+      color: $color-primary;
+      font-size: 18px;
+      line-height: 1.11;
+      padding-bottom: 4px;
     }
 
-    /*****************************
+    &--description {
+      color: $color-text;
+      line-height: 1.25;
+    }
+  }
+
+  /*****************************
     *      Card profile pic      *
     *****************************/
-    &__container--img {
-        width: 240px;
-        height: 200px;
- 
-    }
+  &__container--img {
+    width: 240px;
+    height: 200px;
+  }
 
-    &--img {
-        height: 100%;
-        object-fit: cover;
-        
+  &--img {
+    height: 100%;
+    object-fit: cover;
+  }
 
-    }
-
-
-    /*************************
+  /*************************
     *      Social links      *
     *************************/
 
-    &__viewer--social {
-        display: flex;
-        justify-content: flex-start;
-        padding-left: 15px; 
+  &__viewer--social {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 15px;
 
-        .social--item {
-            height: 32px;
-            width: 32px;
-            line-height: 30px;
-            border: solid 2px $color-palete1-light;
-            border-radius: 50%;
-            margin: 5px;
-            text-align: center;
-            color: $color-primary;
-        }
+    .social--item {
+      height: 32px;
+      width: 32px;
+      line-height: 30px;
+      border: solid 2px $color-palete1-light;
+      border-radius: 50%;
+      margin: 5px;
+      text-align: center;
+      color: $color-primary;
     }
-
-
+  }
 }
