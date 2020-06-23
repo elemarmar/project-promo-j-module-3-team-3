@@ -10,7 +10,7 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     @include desktop {
-        grid-template-columns: 1fr minmax(585px, auto);
+        grid-template-columns: 1fr 585px;
     }
 
     /* Colocar card-viewer en tableta y desktop */
