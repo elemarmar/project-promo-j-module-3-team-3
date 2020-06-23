@@ -17,7 +17,12 @@
     color: $color-text;
     margin-left: auto;
     line-height: 1.5;
+
+    &:hover {
+        cursor: pointer;
+      }
   }
+
   input {
     padding-left: 10px;
     &::placeholder {
@@ -136,7 +141,9 @@
     line-height: 30px;
     border: 1px solid $color-palete1-light;
     &:focus {
-      outline-color: $color-palete1-normal;
+      border: 1px solid $color-palete1-light;
+      outline: none;
+      box-shadow: 0 0 4px 0 rgba($color-palete1-light, 0.9);
     }
   }
   .container-image {
