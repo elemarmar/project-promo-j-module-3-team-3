@@ -5,7 +5,7 @@
 .card__viewer {
   height: 457px;
   // width: 320px;
-  width: 100%;
+  width: auto;
   padding-top: 38px;
   background-image: linear-gradient(
     to bottom,
@@ -16,13 +16,14 @@
 
   @include tablet {
     height: 812px;
-    // width: 329px;
     padding-top: 173px;
+    margin: 20px 40px 20px 0;
+    border-radius: 6px;
   }
 
-  @include desktop {
-    // width: 585px;
-  }
+  // @include desktop {
+  //   width: 585px;
+  // }
 
   /********************
     *      Wrapper      *
