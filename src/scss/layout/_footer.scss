@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid $color-border;
 
   @include tablet {
     flex-direction: row;
