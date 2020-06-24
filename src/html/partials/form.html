@@ -1,4 +1,3 @@
-gg
 <form class="form" action="" method="post">
   <div class="wrapper">
     <div class="design">
@@ -70,31 +69,15 @@ gg
 
         <label for="job">Puesto</label>
         <input
-          type="text"
-          placeholder="Front-end unicorn"
-          id="job"
-          name="job"
+          class="btn btn-addimage"
+          type="file"
+          id="profile-image"
+          name="image"
+          value="Añadir imagen"
         />
-
-        <!-- Imagen de perfil COMPROBAR-->
-        <label for="profile-image">Imagen de perfil</label>
-        <div class="container-image">
-          <input
-            class="btn btn-addimage"
-            type="submit"
-            name="subir-imagen"
-            value="Añadir imagen"
-          />
-          <div class="btn-tickimage">
-            <input
-              class="btn-selectfile"
-              type="file"
-              id="profile-image"
-              name="image"
-              value="Añadir imagen"
-            />
-          </div>
-        </div>
+        />
+        <div class="btn-tickimage"></div>
+      </div>
 
         <label for="email">Email</label>
         <input
