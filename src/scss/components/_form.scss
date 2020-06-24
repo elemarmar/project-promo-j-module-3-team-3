@@ -190,36 +190,38 @@
 }
 .share {
   border-bottom: 1px solid $color-border;
-
-  &__container--title {
-    padding: 10px 0px;
-    display: flex;
-
-    h3 {
-      text-transform: uppercase;
-      color: $color-text;
-      font-size: 18px;
-      margin-left: 10px;
-    }
-  }
   &__container {
-    .button__card {
+    &--title {
+      padding: 10px 0px;
       display: flex;
-      justify-content: center;
-      color: $color-light;
-      font-size: 18px;
-      //background-color: $color-secondary;
-      font-weight: 600;
-      height: 50px;
-      width: 199px;
-      border-radius: 12px;
-      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-      margin: 30px auto;
-      &--enable {
-        background-color: $color-secondary;
+
+      h3 {
+        text-transform: uppercase;
+        color: $color-text;
+        font-size: 18px;
+        margin-left: 10px;
       }
-      &--disable {
-        background-color: $color-disable-btn;
+    }
+
+    &--button {
+      .button__card {
+        display: flex;
+        justify-content: center;
+        color: $color-light;
+        font-size: 18px;
+        //background-color: $color-secondary;
+        font-weight: 600;
+        height: 50px;
+        width: 199px;
+        border-radius: 12px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+        margin: 30px auto;
+        &--enable {
+          background-color: $color-secondary;
+        }
+        &--disable {
+          background-color: $color-disable-btn;
+        }
       }
     }
   }
