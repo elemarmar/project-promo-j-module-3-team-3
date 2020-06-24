@@ -3,10 +3,7 @@
   height: 110px;
   padding-top: 18px;
   padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   border-top: 1px solid $color-border;
 
   @include tablet {
@@ -30,5 +27,21 @@
     @include tablet {
       margin: 0;
     }
+  }
+
+  .wrapper {
+    border: solid 1px red;
+    max-width: 1224px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
   }
 }
