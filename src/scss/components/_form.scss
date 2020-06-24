@@ -47,13 +47,17 @@
   .container__design {
     padding-bottom: 10px;
     display: flex;
-    border-bottom: 1px solid $color-border;
+    flex-direction: column;
 
-    h3 {
-      text-transform: uppercase;
-      color: $color-text;
-      font-size: 18px;
-      margin-left: 10px;
+    &--title {
+      display: flex;
+
+      h3 {
+        text-transform: uppercase;
+        color: $color-text;
+        font-size: 18px;
+        margin-left: 10px;
+      }
     }
   }
   label {
@@ -129,13 +133,16 @@
   .container__fill {
     padding: 10px 0px;
     display: flex;
-    border-bottom: 1px solid $color-border;
+    flex-direction: column;
 
-    h3 {
-      text-transform: uppercase;
-      color: $color-text;
-      font-size: 18px;
-      margin-left: 10px;
+    &--title {
+      display: flex;
+      h3 {
+        text-transform: uppercase;
+        color: $color-text;
+        font-size: 18px;
+        margin-left: 10px;
+      }
     }
   }
   input {
@@ -182,10 +189,12 @@
   }
 }
 .share {
+  border-bottom: 1px solid $color-border;
+
   &__container--title {
     padding: 10px 0px;
     display: flex;
-    border-bottom: 1px solid $color-border;
+
     h3 {
       text-transform: uppercase;
       color: $color-text;
@@ -194,7 +203,6 @@
     }
   }
   &__container {
-    border-bottom: 1px solid $color-border;
     .button__card {
       display: flex;
       justify-content: center;
@@ -213,6 +221,42 @@
       &--disable {
         background-color: $color-disable-btn;
       }
+    }
+  }
+}
+
+.carddone {
+  border-bottom: 1px solid $color-border;
+  text-align: center;
+  h3 {
+    color: $color-text;
+    font-size: 18px;
+    margin: 20px auto 5px;
+  }
+  .link__card {
+    display: block;
+    color: $color-secondary;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .button__twitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-light;
+    font-size: 14px;
+    background-color: $color-button-twitter;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    height: 30px;
+    width: 181px;
+    margin: 10px auto 30px;
+    line-height: 1.43;
+
+    .twitter-icon {
+      font-size: 18px;
+      color: $color-light;
+      margin-right: 9.5px;
     }
   }
 }
