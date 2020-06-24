@@ -1,5 +1,4 @@
 .form {
-
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -19,8 +18,8 @@
     line-height: 1.5;
 
     &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
+    }
   }
 
   input {
@@ -199,13 +198,19 @@
       align-items: center;
       color: $color-light;
       font-size: 18px;
-      background-color: $color-secondary;
+      //background-color: $color-secondary;
       font-weight: 600;
       height: 50px;
       width: 199px;
       border-radius: 12px;
       box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
       margin: 30px auto;
+      &--enable {
+        background-color: $color-secondary;
+      }
+      &--disable {
+        background-color: $color-disable-btn;
+      }
     }
   }
 }
