@@ -1,142 +1,86 @@
 <form class="form" action="" method="post">
-  <div class="wrapper">
-    <div class="design">
-      <div class="container__design">
-        <div class="container__design--title">
-          <i class="main__menu-icon far fa-object-ungroup"></i>
-          <h3>Diseña</h3>
-          <i class="arrow fas fa-chevron-down"></i>
-        </div>
-        <div class="palettes__container">
-          <label for="palettes">Colores</label>
-          <div class="palettes__options">
-            <div class="option option1">
-              <input
-                type="radio"
-                id="palettes"
-                value="palette1"
-                name="palettes"
-                required
-              />
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
+    <div class="wrapper">
+        <div class="design">
+            <div class="container__design">
+                <div class="container__design--title">
+                    <i class="main__menu-icon far fa-object-ungroup"></i>
+                    <h3>Diseña</h3>
+                    <i class="arrow fas fa-chevron-down"></i>
+                </div>
+                <div class="palettes__container">
+                    <label for="palettes">Colores</label>
+                    <div class="palettes__options">
+                        <div class="option option1">
+                            <input type="radio" id="palettes" value="palette1" name="palettes" required />
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                        </div>
+                        <div class="option option2">
+                            <input type="radio" id="palettes" value="palette2" name="palettes" required />
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                        </div>
+                        <div class="option option3">
+                            <input type="radio" id="palettes" value="palette3" name="palettes" required />
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="option option2">
-              <input
-                type="radio"
-                id="palettes"
-                value="palette2"
-                name="palettes"
-                required
-              />
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
+        </div>
+        <div class="fill">
+            <div class="container__fill">
+                <div class="container__fill--title">
+                    <i class="main__menu-icon far fa-keyboard"></i>
+                    <h3>Rellena</h3>
+                    <i class="arrow fas fa-chevron-down"></i>
+                </div>
+
+                <label for="name">Nombre completo</label>
+                <input type="text" placeholder="Ej: Sally Jill" id="name" name="name" required />
+
+                <label for="job">Puesto</label>
+                <input class="btn btn-addimage" type="file" id="profile-image" name="image" value="Añadir imagen" />
+                <div class="btn-tickimage"></div>
             </div>
-            <div class="option option3">
-              <input
-                type="radio"
-                id="palettes"
-                value="palette3"
-                name="palettes"
-                required
-              />
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
-              <div class="palette__color"></div>
+
+            <label for="email">Email</label>
+            <input class="email" type="email" placeholder="Ej: sally-hill@gmail.com" id="email" name="email" required />
+
+            <label for="phone">Teléfono</label>
+            <input class="phone" type="tel" placeholder="Ej: 555-55-55-55" id="phone" name="phone" />
+
+            <label for="linkedin">Linkedin</label>
+            <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" id="linkedin" name="linkedin" />
+
+            <label for="github">Github</label>
+            <input type="text" placeholder="Ej: @sally-hill" id="github" name="github" />
+        </div>
+
+        <div class="share">
+            <div class="share__container">
+                <div class="share__container--title">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                    <h3>Comparte</h3>
+                    <i class="arrow fas fa-chevron-down"></i>
+                </div>
+                <div class="share__container--button">
+                    <a class="button__card btn--disable" href="" title="Crear tarjeta"><i class="i__card far fa-address-card"></i>CREAR
+                        TARJETA
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="fill">
-      <div class="container__fill">
-        <div class="container__fill--title">
-          <i class="main__menu-icon far fa-keyboard"></i>
-          <h3>Rellena</h3>
-          <i class="arrow fas fa-chevron-down"></i>
+        <div class="carddone">
+            <h3>La tarjeta ha sido creada</h3>
+            <a class="link__card" href="" title="Enlace de la tarjeta">http://www.loquesea.com</a>
+            <a class="button__twitter" href="" title="Compartir en Twitter"><i
+                    class="twitter-icon fab fa-twitter"></i>Compartir en twitter
+            </a>
         </div>
-
-        <label for="name">Nombre completo</label>
-        <input
-          type="text"
-          placeholder="Ej: Sally Jill"
-          id="name"
-          name="name"
-          required
-        />
-
-        <label for="job">Puesto</label>
-        <input
-          class="btn btn-addimage"
-          type="file"
-          id="profile-image"
-          name="image"
-          value="Añadir imagen"
-        />
-        />
-        <div class="btn-tickimage"></div>
-      </div>
-
-        <label for="email">Email</label>
-        <input
-          class="email"
-          type="email"
-          placeholder="Ej: sally-hill@gmail.com"
-          id="email"
-          name="email"
-          required
-        />
-
-        <label for="phone">Teléfono</label>
-        <input
-          class="phone"
-          type="tel"
-          placeholder="Ej: 555-55-55-55"
-          id="phone"
-          name="phone"
-        />
-
-        <label for="linkedin">Linkedin</label>
-        <input
-          type="text"
-          placeholder="Ej: linkedin.com/in/sally.hill"
-          id="linkedin"
-          name="linkedin"
-        />
-
-        <label for="github">Github</label>
-        <input
-          type="text"
-          placeholder="Ej: @sally-hill"
-          id="github"
-          name="github"
-        />
-      </div>
     </div>
-    <div class="share">
-      <div class="share__container">
-        <div class="share__container--title">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-          <h3>Comparte</h3>
-          <i class="arrow fas fa-chevron-down"></i>
-        </div>
-        <div class="share__container--button">
-          <a class="button__card" href="" title="Crear tarjeta"
-            ><i class="i__card far fa-address-card"></i>CREAR TARJETA
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="carddone">
-      <h3>La tarjeta ha sido creada</h3>
-      <a class="link__card" href="" title="Enlace de la tarjeta"
-        >http://www.loquesea.com</a
-      >
-      <a class="button__twitter" href="" title="Compartir en Twitter"
-        ><i class="twitter-icon fab fa-twitter"></i>Compartir en twitter
-      </a>
-    </div>
-  </div>
 </form>

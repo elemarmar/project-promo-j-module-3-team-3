@@ -130,6 +130,7 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $color-border;
+  padding-bottom: 30px;
   .container__fill {
     padding: 10px 0px;
     display: flex;
@@ -207,6 +208,7 @@
       .button__card {
         display: flex;
         justify-content: center;
+        align-items: center;
         color: $color-light;
         font-size: 18px;
         //background-color: $color-secondary;
@@ -216,12 +218,13 @@
         border-radius: 12px;
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
-        &--enable {
-          background-color: $color-secondary;
-        }
-        &--disable {
-          background-color: $color-disable-btn;
-        }
+      }
+
+      .btn--enable {
+        background-color: $color-secondary;
+      }
+      .btn--disable {
+        background-color: $color-disable-btn;
       }
     }
   }
