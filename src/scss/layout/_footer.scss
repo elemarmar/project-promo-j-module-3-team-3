@@ -26,5 +26,8 @@
     height: 40px;
     width: 103px;
     margin-top: 12px;
+    @include tablet {
+      margin: 0;
+    }
   }
 }
