@@ -1,5 +1,4 @@
 .form {
-
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -19,8 +18,8 @@
     line-height: 1.5;
 
     &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
+    }
   }
 
   input {
@@ -64,7 +63,9 @@
   .palettes__container {
     display: flex;
     justify-content: space-between;
-
+    label {
+      padding-top: 22px;
+    }
     input {
       display: inline-block;
     }
@@ -77,13 +78,14 @@
       .option {
         display: flex;
         align-items: center;
-        margin: 20px;
-        margin-right: 0px;
+        margin: 20px 0px 20px 20px;
+
         input {
           margin-right: 10px;
         }
       }
       .option1 {
+        margin-top: 31px;
         .palette__color:nth-child(1n) {
           background-color: $color-palete1-normal;
         }
