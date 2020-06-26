@@ -149,6 +149,12 @@
       }
     }
   }
+
+  .fill-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
   input {
     font-size: 14px;
     line-height: 30px;
