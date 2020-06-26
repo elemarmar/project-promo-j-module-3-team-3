@@ -2,31 +2,36 @@
     <div class="wrapper">
         <div class="design">
             <div class="container__design">
-                <div class="container__design--title">
+                <div class="container__design--title js-collapsableParent">
                     <i class="main__menu-icon far fa-object-ungroup"></i>
                     <h3>Diseña</h3>
                     <i class="arrow fas fa-chevron-down"></i>
                 </div>
-                <div class="palettes__container">
-                    <label for="palettes">Colores</label>
+                <div class="palettes__container js-collapsableChild">
+                    <span>Colores</span>
                     <div class="palettes__options">
                         <div class="option option1">
-                            <input type="radio" id="palettes" value="palette1" name="palettes" required />
+                            <label for="palette1">
+                            <input type="radio" id="palette1" value="1" name="palette" required />
                             <div class="palette__color"></div>
                             <div class="palette__color"></div>
-                            <div class="palette__color"></div>
+                            <div class="palette__color"></div></label>
                         </div>
                         <div class="option option2">
-                            <input type="radio" id="palettes" value="palette2" name="palettes" required />
+                            <label for="palette2">
+                            <input type="radio" id="palette2" value="2" name="palette" required />
                             <div class="palette__color"></div>
                             <div class="palette__color"></div>
                             <div class="palette__color"></div>
+                            </label>
                         </div>
                         <div class="option option3">
-                            <input type="radio" id="palettes" value="palette3" name="palettes" required />
+                            <label for="palette3">
+                            <input type="radio" id="palette3" value="3" name="palette" required />
                             <div class="palette__color"></div>
                             <div class="palette__color"></div>
                             <div class="palette__color"></div>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -34,17 +39,20 @@
         </div>
         <div class="fill">
             <div class="container__fill">
-                <div class="container__fill--title">
+                <div class="container__fill--title js-collapsableParent">
                     <i class="main__menu-icon far fa-keyboard"></i>
                     <h3>Rellena</h3>
                     <i class="arrow fas fa-chevron-down"></i>
                 </div>
-
+                    
                 <label for="name">Nombre completo</label>
                 <input type="text" placeholder="Ej: Sally Jill" id="name" name="name" required />
 
                 <label for="job">Puesto</label>
-                <input class="btn btn-addimage" type="file" id="profile-image" name="image" value="Añadir imagen" />
+                <input type="text" placeholder="Ej: Front-end unicorn " id="job" name="job" required />
+
+                <label for="profile-image">Imagen de perfil</label>
+                <input class="btn btn-addimage" type="file" id="profile-image" name="photo" value="Añadir imagen" />
                 <div class="btn-tickimage"></div>
             </div>
 
@@ -63,7 +71,7 @@
 
         <div class="share">
             <div class="share__container">
-                <div class="share__container--title">
+                <div class="share__container--title js-collapsableParent">
                     <i class="fa fa-share-alt" aria-hidden="true"></i>
                     <h3>Comparte</h3>
                     <i class="arrow fas fa-chevron-down"></i>

@@ -1,3 +1,5 @@
+
+
 .form {
   i {
     display: inline-block;
@@ -40,6 +42,7 @@
       padding: 27px 30px 30px 40px;
     }
   }
+
 }
 
 .design {
@@ -67,7 +70,7 @@
   .palettes__container {
     display: flex;
     justify-content: space-between;
-    label {
+    span {
       padding-top: 22px;
     }
     input {
@@ -219,7 +222,6 @@
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
       }
-
       .btn--enable {
         background-color: $color-secondary;
       }
@@ -265,3 +267,7 @@
     }
   }
 }
+
+.form .hidden {
+    display: none;
+  }
