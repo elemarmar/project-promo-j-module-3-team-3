@@ -6,7 +6,7 @@ const person = {
   name: document.querySelector(".js-personName"),
   job: document.querySelector(".js-personJob"),
   email: document.querySelector(".js-email"),
-  phone: document.querySelector(".js-phone"),
+  phone: document.querySelector(".js-mobile"),
   linkedin: document.querySelector(".js-linkedin"),
   github: document.querySelector(".js-github"),
 };
