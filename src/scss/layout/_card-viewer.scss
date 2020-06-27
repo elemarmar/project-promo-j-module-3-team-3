@@ -54,7 +54,7 @@
 }
 
 .card {
-    /******************************************
+  /******************************************
     *      Card text: name & description      *
     ******************************************/
   &__text {
@@ -76,7 +76,7 @@
     }
   }
 
-    /*****************************
+  /*****************************
     *      Card profile pic      *
     *****************************/
   &__container--img {
@@ -99,14 +99,20 @@
     padding-left: 15px;
 
     .social--item {
-      height: 32px;
-      width: 32px;
-      line-height: 30px;
-      border: solid 2px $color-palete1-light;
-      border-radius: 50%;
-      margin: 5px;
-      text-align: center;
-      color: $color-primary;
+      a {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        line-height: 30px;
+        border: solid 2px $color-palete1-light;
+        border-radius: 50%;
+        margin: 5px;
+        text-align: center;
+        color: $color-primary;
+      }
+      .hidden {
+        display: none;
+      }
     }
   }
 }
