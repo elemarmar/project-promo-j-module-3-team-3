@@ -33,15 +33,53 @@ function paintCard(event) {
 
   // Paint Email
   else if (event.target === inputEmail) {
-    person.email.href = person.email.href + inputEmail.value;
+    person.email.href = `mailto:${inputEmail.value}`;
     person.email.classList.remove("hidden");
   } else if (event.target === inputPhone) {
-    person.phone.href = person.phone.href + inputPhone.value;
+    person.phone.href = `tel:${inputPhone.value}`;
+    person.phone.title = inputPhone.value;
     person.phone.classList.remove("hidden");
+  } else if (event.target === inputLinkedin) {
+    person.linkedin.href = inputLinkedin.value;
+    person.linkedin.classList.remove("hidden");
+  } else if (event.target === inputGithub) {
+    person.github.href = inputGithub.value;
+    person.github.classList.remove("hidden");
   }
 }
 
 form.addEventListener("keyup", paintCard);
+
+// Resetear el formulario
+const buttonReset = document.querySelector(".btn--reset");
+
+function resetForm() {
+  document.querySelector(".form").reset();
+  person.name.innerHTML = "Nombre Apellido";
+  person.job.innerHTML = "Front-end developer";
+
+  if (person.phone.classList.contains(".hidden") === false) {
+    person.phone.classList.add("hidden");
+  }
+  person.phone.href = "";
+
+  if (person.email.classList.contains(".hidden") === false) {
+    person.email.classList.add("hidden");
+  }
+  person.email.href = "";
+
+  if (person.linkedin.classList.contains(".hidden") === false) {
+    person.linkedin.classList.add("hidden");
+  }
+  person.github.href = "";
+
+  if (person.github.classList.contains(".hidden") === false) {
+    person.github.classList.add("hidden");
+  }
+  person.github.href = "";
+}
+
+buttonReset.addEventListener("click", resetForm);
 
 // paint text
 // paint image --> NO
