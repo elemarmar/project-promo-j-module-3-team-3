@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Función handler reusable que muestra u oculta los collapsibles
 function showCollapsible(event) {
 
@@ -7,6 +8,7 @@ function showCollapsible(event) {
   const colTitle = document.querySelectorAll('.js-collapsibleParent > h3');
   const colArrow = document.querySelectorAll('.js-collapsibleParent > .arrow');
   const colBox = document.querySelectorAll('.js-collapsibleChild');
+
 
   // Caso 1: Pulsamos design
   if (event.target === colTitle[0] || event.target === colArrow[0]) {
