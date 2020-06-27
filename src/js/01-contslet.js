@@ -1,6 +1,7 @@
 "use strict";
 
-//COLAPSABLE
+//COLAPSABLE DESING
+
 const design = document.querySelector(".container__design--title");
 const designCollapsable = document.querySelector(".palettes__container");
 
@@ -17,3 +18,8 @@ function showCollapsable() {
     // pon hidden
   }
 }
+design.addEventListener("click", showCollapsable);
+// //COLAPSABLE FILL
+
+// const design = document.querySelector(".container__fill--title");
+// const designCollapsable = document.querySelector(".palettes__container");
