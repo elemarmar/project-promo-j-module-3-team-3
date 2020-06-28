@@ -11,6 +11,11 @@ const person = {
   github: document.querySelector(".js-github"),
 };
 
+const defaultPerson = {
+    name: 'Nombre Apellido',
+    job: 'Front-end Developer',
+};
+
 // Constantes de input
 const inputName = document.querySelector("#name");
 const inputJob = document.querySelector("#job");
@@ -23,12 +28,18 @@ function paintCard(event) {
   console.log("WORKING");
 
   // Paint Name
-  if (event.target === inputName) {
-    person.name.innerHTML = inputName.value;
+    if (event.target === inputName) {
+        // person.name.innerHTML = inputName.value;
+
+      // Ternario que cambia el valor del person.name.innerHTML al default si está vacío
+      person.name.innerHTML = inputName.value !== '' ? inputName.value : defaultPerson.name;
 
     // Paint Job
-  } else if (event.target === inputJob) {
-    person.job.innerHTML = inputJob.value;
+    } else if (event.target === inputJob) {
+        // person.job.innerHTML = inputJob.value;
+
+        // Ternario que cambia el valor del inputJov al default si no está vacío
+        person.job.innerHTML = inputJob.value !== '' ? inputJob.value : defaultPerson.job;
   }
 
   // Paint Email
