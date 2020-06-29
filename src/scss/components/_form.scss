@@ -291,12 +291,14 @@
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
         border: none;
+        cursor: pointer;
       }
       .btn--enable {
         background-color: $color-secondary;
       }
       .btn--disable {
         background-color: $color-disable-btn;
+        cursor: not-allowed;
       }
     }
   }
@@ -408,8 +410,8 @@
 }
 .js-palette3 { 
     .card-background {
-    background-image: linear-gradient(to bottom, rgb(17, 168, 110), rgb(29, 46, 122)) !important;
-
+    // background-image: linear-gradient(to bottom, rgb(17, 168, 110), rgb(29, 46, 122)) !important;
+        background-image: linear-gradient(to bottom, rgb(245, 232, 173) 60%, rgb(192, 179, 130)) !important;
 }
     .card__text--name { 
     color: $color-palete3-dark;
@@ -424,6 +426,8 @@
     border-color: $color-palete3-light;
     color: $color-palete3-dark;
     }
+
+
 }
 
 }
@@ -444,7 +448,7 @@
 .card__viewer--social {
     .social--item a{
   border-color: $color-palete4-light;
-  color: $color-palete3-dark;
+  color: $color-palete4-dark;
   }
 }
 

@@ -20,6 +20,30 @@
     }
   }
 
+ @keyframes up-fade {
+     from {
+         opacity: 0;
+         transform: translateY(20px);
+
+     }
+     to {
+        opacity: 1;
+        transform: translateY(1);
+     }
+ } 
+
+ @keyframes drop-fade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+
+    }
+    to {
+       opacity: 1;
+       transform: translateY(1);
+    }
+} 
+
 // para cerrar
 // @keyframes shrinkUp {
 //     0% {

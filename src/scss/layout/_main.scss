@@ -58,7 +58,7 @@
       flex-direction: column;
       justify-content: center;
     }
-    &-icon {
+    &-icons {
       font-size: 1.4rem;
       font-weight: normal;
       color: $color-secondary;
@@ -91,6 +91,12 @@
     text-transform: uppercase;
     margin-top: 38.6px;
     padding: 10px 20px;
+    transition: all .5s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-palete1-dark;
+    }
   }
 }
 
@@ -124,7 +130,7 @@
         width: 75px;
         height: 61px;
       }
-      &-icon {
+      &-icons {
         font-size: 1.75rem;
       }
       &-text {
@@ -135,4 +141,15 @@
       margin-top: 186px;
     }
   }
+}
+
+
+/********* Animation *********/
+
+.main__menu-icons {
+    animation: up-fade 3s ease;
+}
+
+.main__menu-text {
+    animation: drop-fade 3s ease;
 }
