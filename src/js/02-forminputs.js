@@ -1,31 +1,45 @@
 "use strict";
 const form = document.querySelector(".form");
 const card = document.querySelector(".card__viewer");
+const background = document.querySelector(".card-background");
 
 //Palettes
 const palettes = document.querySelectorAll(".palette");
 
 function changeColors(event) {
-    if (event.target === palettes[0]){
+    background.classList.add("run-animation")
+    if (event.target === palettes[0]) {
         card.classList.add('js-palette1');
         card.classList.remove('js-palette2');
         card.classList.remove('js-palette3');
+        card.classList.remove('js-palette4');
+
         
     } else if (event.target === palettes[1]) {
+
         card.classList.remove('js-palette3');
       card.classList.add('js-palette2');
       card.classList.remove('js-palette1');
+      card.classList.remove('js-palette4');
 
 
     } else if (event.target === palettes[2]) {
       card.classList.add('js-palette3');
         card.classList.remove('js-palette2');
         card.classList.remove('js-palette1');
+        card.classList.remove('js-palette4');
+        
+    } else if (event.target === palettes[3]) {
+    card.classList.add('js-palette4');
+      card.classList.remove('js-palette3');
+      card.classList.remove('js-palette2');
+      card.classList.remove('js-palette1');
     }
-  
-  
 
+    setTimeout(function(){     background.classList.remove("run-animation"); }, 1000);
 }
+
+
 
 
 for (const palette of palettes) {
@@ -56,28 +70,29 @@ const inputPhone = document.querySelector("#phone");
 const inputLinkedin = document.querySelector("#linkedin");
 const inputGithub = document.querySelector("#github");
 
+const buttonCard = document.querySelector('.button__card');
+
 function paintCard(event) {
   console.log("WORKING");
 
   // Paint Name
     if (event.target === inputName) {
-      // Ternario que cambia el valor del person.name.innerHTML al default si está vacío
       person.name.innerHTML = inputName.value !== '' ? inputName.value : defaultPerson.name;
-
     // Paint Job
     } else if (event.target === inputJob) {
-        // Ternario que cambia el valor del inputJov al default si no está vacío
-        person.job.innerHTML = inputJob.value !== '' ? inputJob.value : defaultPerson.job;
+    person.job.innerHTML = inputJob.value !== '' ? inputJob.value : defaultPerson.job;
     }
-
-  // Paint Email
+   // Paint Email
   else if (event.target === inputEmail) {
     person.email.href = `mailto:${inputEmail.value}`;
     person.email.classList.remove("hidden");
+    // Paint Phone
   } else if (event.target === inputPhone) {
     person.phone.href = `tel:${inputPhone.value}`;
     person.phone.title = inputPhone.value;
-    person.phone.classList.remove("hidden");
+        person.phone.classList.remove("hidden");
+        
+    //Paint linkedin
   } else if (event.target === inputLinkedin) {
     person.linkedin.href = inputLinkedin.value;
     person.linkedin.classList.remove("hidden");
@@ -85,8 +100,18 @@ function paintCard(event) {
     person.github.href = inputGithub.value;
     person.github.classList.remove("hidden");
     }
-    
+    // Enable / Disable create button Add Color to ButtonCard
 
+    
+    if (inputName === '' &&  inputJob === '' && inputEmail === '' && inputPhone === '') {
+      buttonCard.classList.remove('btn--enable');
+      buttonCard.classList.add('btn--disable');
+        buttonCard.setAttribute('disable');
+     } else {
+      buttonCard.classList.remove('btn--disable');
+        buttonCard.classList.add('btn--enable');
+        buttonCard.removeAttribute('disable');
+     }
 }
 
 form.addEventListener("keyup", paintCard);
@@ -123,4 +148,14 @@ function resetForm() {
 
 buttonReset.addEventListener("click", resetForm);
 
+//BUTTON CREAR TARJETA
 
+const cardDone = document.querySelector('.js-carddone');
+
+function showCardDone () {
+  cardDone.classList.remove('hidden');
+  buttonCard.classList.add('btn--disable');
+  buttonCard.setAttribute('disable');
+}
+
+buttonCard.addEventListener('click', showCardDone);

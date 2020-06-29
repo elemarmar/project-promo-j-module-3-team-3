@@ -14,5 +14,16 @@
         text-transform: uppercase;
         line-height: 1.67;
         color: $color-text;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-light;
+            color: $color-palete2-light;
+            // color: $color-palete2-light;
+        }
+
+        &:focus {
+            outline: none;
+          }
     }
 }

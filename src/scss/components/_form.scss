@@ -18,10 +18,16 @@
     color: $color-text;
     margin-left: auto;
     line-height: 1.5;
+    transition: all .5s ease;
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .arrow-active {
+      transform: rotateX(180deg);
+      color: $color-secondary;
   }
 
   input {
@@ -33,6 +39,10 @@
   label {
     color: $color-primary;
     padding-bottom: 7px;
+  }
+
+  h3 {
+    cursor: pointer;
   }
 
   .wrapper {
@@ -131,6 +141,17 @@
           background-color: $color-palete3-light;
         }
       }
+      .option4 {
+        .palette__color:nth-child(1n) {
+          background-color: $color-palete4-normal;
+        }
+        .palette__color:nth-child(2n) {
+          background-color: $color-palete4-dark;
+        }
+        .palette__color:nth-child(4n) {
+          background-color: $color-palete4-light;
+        }
+      }
     }
   }
 }
@@ -139,11 +160,12 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $color-border;
-  padding-bottom: 30px;
+
   .container__fill {
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
+
 
     &--title {
       display: flex;
@@ -159,6 +181,52 @@
   .fill-box {
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
+    transition: all .5s ease;
+
+    .btn-container {
+        position: relative;
+        display: flex;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .btn-addimage {
+        width: 140px;
+        height: 30px;
+        background-color: $color-secondary;
+        color: $color-light;
+        border-radius: 3px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+        border: 0;
+        font-size: 14px;
+
+      }
+
+      input[type='file'] {
+          position: absolute;
+          top: 0;
+          left: 10px;
+          width: 140px;
+          opacity: 0;
+
+
+          &:hover ~ .btn-addimage {
+            background-color: $color-palete2-light;
+
+         }
+      }
+
+      .btn-tickimage {
+        border: 1px solid $color-palete1-light;
+        height: 30px;
+        width: 30px;
+        margin-left: 20px;
+        display: inline-block;
+      }
   }
   
   input {
@@ -175,18 +243,7 @@
     display: flex;
     margin-top: 7px;
 
-    .btn-addimage {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      width: 140px;
-      height: 30px;
-      background-color: $color-secondary;
-      color: $color-light;
-      border-radius: 3px;
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-      // padding: 3px 22px 7px; Mirar padding
-    }
+
 
     .btn-tickimage {
       border: 1px solid $color-palete1-light;
@@ -233,6 +290,7 @@
         border-radius: 12px;
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
+        border: none;
       }
       .btn--enable {
         background-color: $color-secondary;
@@ -281,14 +339,33 @@
 }
 
 .form .hidden {
+
+    // opacity: 0;
+    // animation: shrinkUp .5s ease forwards;
     display: none;
+    // transform-origin: top center;
   }
 
+  .js-collapsibleChild {
+    animation: growDown .3s ease forwards;
+    transform-origin: top center;
+    opacity: 1;
+    overflow: hidden;
+  };
 
 /**************************
 *   Colores palettes      *
 **************************/
+
+
 .js-palette1 { 
+    .card-background {
+        background-image: linear-gradient(
+        to bottom,
+        #bfcdd0,
+        $color-background-card2
+      );
+    }
   .card__text--name { 
     color: $color-palete1-dark;
     border-color: $color-palete1-normal;
@@ -309,7 +386,11 @@
 }
 
 .js-palette2 { 
-  .card__text--name { 
+    // animation: animatedBackground .3s ease forwards;
+    .card-background{
+        background-image: linear-gradient(to bottom, rgb(241, 207, 207), rgb(226, 159, 171)) !important;
+    }
+    .card__text--name { 
     color: $color-palete2-dark;
   }
 
@@ -326,7 +407,11 @@
     
 }
 .js-palette3 { 
-  .card__text--name { 
+    .card-background {
+    background-image: linear-gradient(to bottom, rgb(17, 168, 110), rgb(29, 46, 122)) !important;
+
+}
+    .card__text--name { 
     color: $color-palete3-dark;
   }
 
@@ -340,4 +425,32 @@
     color: $color-palete3-dark;
     }
 }
+
+}
+
+.js-palette4 { 
+    .card-background {
+  background-image: linear-gradient(to bottom, rgb(219, 159, 238), rgb(17, 33, 106)) !important;
+
+}
+  .card__text--name { 
+  color: $color-palete4-dark;
+}
+
+.card__text {
+  border-color: $color-palete4-normal;
+}
+
+.card__viewer--social {
+    .social--item a{
+  border-color: $color-palete4-light;
+  color: $color-palete3-dark;
+  }
+}
+
+}
+
+
+.run-animation {
+    animation: animatedBackground 2s ease;
 }

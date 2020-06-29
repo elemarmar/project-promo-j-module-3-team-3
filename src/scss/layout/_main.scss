@@ -2,6 +2,7 @@
   background-color: $color-background;
   text-align: center;
   flex-grow: 1;
+
 }
 .main {
   width: 100%;
@@ -12,7 +13,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 95px 35px 30px;
+  padding-bottom: 30px;
+
+
   &__title {
     width: 250px;
     height: 63px;
@@ -94,7 +97,9 @@
 @include tablet {
   .main {
     // height: 963px;
-    padding: 350px 174px 59px 175px;
+    padding: 100px 0 60px;
+    justify-content: flex-end;
+
     &__title {
       width: 419px;
       height: 105px;

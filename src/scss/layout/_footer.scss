@@ -3,14 +3,16 @@
   height: 110px;
   padding-top: 18px;
   padding-bottom: 20px;
-
-  border-top: 1px solid $color-border;
+   border-top: 1px solid $color-border;
+   box-sizing: content-box;
+   display: flex;
+   align-items: center;
 
   @include tablet {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-right: 40px;
-    padding-left: 41px;
+    padding: 0;
+    height: 60px;
+
+    
   }
 
   &__text {
@@ -30,12 +32,16 @@
   }
 
   .wrapper {
+      flex-grow: 1;
     max-width: 1224px;
+    height: 60px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 40px;
+    padding-left: 41px;
 
     @include tablet {
         flex-direction: row;

@@ -42,6 +42,14 @@
                             <div class="palette__color"></div>
                             </label>
                         </div>
+                        <div class="option option4">
+                            <label for="palette4">
+                            <input type="radio" class="palette" id="palette4" value="4" name="palette" required />
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                            <div class="palette__color"></div>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,8 +74,11 @@
                     <input type="text" placeholder="Ej: Front-end unicorn " id="job" name="job" required />
 
                     <label for="profile-image">Imagen de perfil</label>
-                    <input class="btn btn-addimage" type="file" id="profile-image" name="photo" value="Añadir imagen" />
-                    <div class="btn-tickimage"></div>
+                    <div class="btn-container">
+                        <input class="btn " type="file" id="profile-image" name="photo" value="Añadir imagen" />
+                        <button type="btn" class="btn-addimage">Añadir imagen</button>
+                        <div class="btn-tickimage"></div>
+                    </div>
                 
 
                     <label for="email">Email</label>
@@ -97,13 +108,13 @@
                     <i class="arrow fas fa-chevron-down"></i>
                 </div>
                 <div class="share__container--button js-collapsibleChild hidden">
-                    <a class="button__card btn--disable" href="" title="Crear tarjeta"><i class="i__card far fa-address-card"></i>CREAR
+                    <button class="button__card btn--disable" href="" title="Crear tarjeta" disable><i class="i__card far fa-address-card"></i>CREAR
                         TARJETA
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="carddone">
+        <div class="carddone js-carddone hidden">
             <h3>La tarjeta ha sido creada</h3>
             <a class="link__card" href="" title="Enlace de la tarjeta">http://www.loquesea.com</a>
             <a class="button__twitter" href="" title="Compartir en Twitter"><i

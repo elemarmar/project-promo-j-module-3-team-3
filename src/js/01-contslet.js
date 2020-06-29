@@ -16,17 +16,29 @@ function showCollapsible(event) {
     colBox[1].classList.add('hidden');
     colBox[2].classList.add('hidden');
 
+    colArrow[0].classList.toggle('arrow-active');
+    colArrow[1].classList.remove('arrow-active');
+    colArrow[2].classList.remove('arrow-active');
+
   // Caso 2: Pulsamos fill
   } else if (event.target === colTitle[1] || event.target === colArrow[1]) {
     colBox[0].classList.add('hidden');
     colBox[1].classList.toggle('hidden');
     colBox[2].classList.add('hidden');
-
+      
+    colArrow[0].classList.remove('arrow-active');
+    colArrow[1].classList.toggle('arrow-active');
+      colArrow[2].classList.remove('arrow-active');
+      
   // Caso 3: pulsamos share
   } else if (event.target === colTitle[2] || event.target === colArrow[2]) {
     colBox[0].classList.add('hidden');
     colBox[1].classList.add('hidden');
     colBox[2].classList.toggle('hidden');
+      
+    colArrow[0].classList.remove('arrow-active');
+    colArrow[1].classList.remove('arrow-active');
+    colArrow[2].classList.toggle('arrow-active');
   }
 }
 
