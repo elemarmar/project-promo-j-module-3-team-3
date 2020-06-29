@@ -87,8 +87,14 @@
         align-items: center;
         margin: 20px 0px 20px 20px;
 
+
         input {
           margin-right: 10px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
         }
       }
       .option1 {
@@ -277,3 +283,61 @@
 .form .hidden {
     display: none;
   }
+
+
+/**************************
+*   Colores palettes      *
+**************************/
+.js-palette1 { 
+  .card__text--name { 
+    color: $color-palete1-dark;
+    border-color: $color-palete1-normal;
+  }
+
+  .card__text {
+    border-color: $color-palete1-normal;
+  }
+
+
+  .card__viewer--social {
+    .social--item a {
+    border-color: $color-palete1-light;
+    color: $color-palete1-dark;
+        }
+    }
+    
+}
+
+.js-palette2 { 
+  .card__text--name { 
+    color: $color-palete2-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete2-normal;
+  }
+
+  .card__viewer--social {
+    .social--item a {
+    border-color: $color-palete2-light;
+    color: $color-palete2-dark;
+    }
+    }
+    
+}
+.js-palette3 { 
+  .card__text--name { 
+    color: $color-palete3-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete3-normal;
+  }
+
+  .card__viewer--social {
+      .social--item a{
+    border-color: $color-palete3-light;
+    color: $color-palete3-dark;
+    }
+}
+}

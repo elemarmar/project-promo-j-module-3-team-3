@@ -1,5 +1,37 @@
 "use strict";
 const form = document.querySelector(".form");
+const card = document.querySelector(".card__viewer");
+
+//Palettes
+const palettes = document.querySelectorAll(".palette");
+
+function changeColors(event) {
+    if (event.target === palettes[0]){
+        card.classList.add('js-palette1');
+        card.classList.remove('js-palette2');
+        card.classList.remove('js-palette3');
+        
+    } else if (event.target === palettes[1]) {
+        card.classList.remove('js-palette3');
+      card.classList.add('js-palette2');
+      card.classList.remove('js-palette1');
+
+
+    } else if (event.target === palettes[2]) {
+      card.classList.add('js-palette3');
+        card.classList.remove('js-palette2');
+        card.classList.remove('js-palette1');
+    }
+  
+  
+
+}
+
+
+for (const palette of palettes) {
+    palette.addEventListener('change', changeColors);
+}
+
 
 // Objeto persona (tarjeta)
 const person = {
@@ -29,18 +61,14 @@ function paintCard(event) {
 
   // Paint Name
     if (event.target === inputName) {
-        // person.name.innerHTML = inputName.value;
-
       // Ternario que cambia el valor del person.name.innerHTML al default si está vacío
       person.name.innerHTML = inputName.value !== '' ? inputName.value : defaultPerson.name;
 
     // Paint Job
     } else if (event.target === inputJob) {
-        // person.job.innerHTML = inputJob.value;
-
         // Ternario que cambia el valor del inputJov al default si no está vacío
         person.job.innerHTML = inputJob.value !== '' ? inputJob.value : defaultPerson.job;
-  }
+    }
 
   // Paint Email
   else if (event.target === inputEmail) {
@@ -56,7 +84,9 @@ function paintCard(event) {
   } else if (event.target === inputGithub) {
     person.github.href = inputGithub.value;
     person.github.classList.remove("hidden");
-  }
+    }
+    
+
 }
 
 form.addEventListener("keyup", paintCard);
@@ -65,11 +95,12 @@ form.addEventListener("keyup", paintCard);
 const buttonReset = document.querySelector(".btn--reset");
 
 function resetForm() {
-  document.querySelector(".form").reset();
-  person.name.innerHTML = "Nombre Apellido";
-  person.job.innerHTML = "Front-end developer";
+  document.querySelector(".form").reset(); 
+  person.name.innerHTML = "Nombre Apellido"; // utilizar objeto?
+  person.job.innerHTML = "Front-end developer"; // utilizar objeto?
 
-  if (person.phone.classList.contains(".hidden") === false) {
+
+  if (person.phone.classList.contains(".hidden") === false) { 
     person.phone.classList.add("hidden");
   }
   person.phone.href = "";
@@ -92,8 +123,4 @@ function resetForm() {
 
 buttonReset.addEventListener("click", resetForm);
 
-// paint text
-// paint image --> NO
-// Botón reset
-// botón -habilitar deshabilitar y mostrar/ocultar mensaje
-// palettes
+
