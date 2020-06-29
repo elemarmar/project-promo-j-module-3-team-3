@@ -42,6 +42,8 @@
         <!-- Section: Card Viewer -->
 
         <section class="card__viewer">
+            <div class="card-background"></div>
+
           <!-- Reset button -->
           <!-- We can use a button or input type reset. I'll use the button for now 
             <input type="reset">-->
@@ -52,6 +54,7 @@
 
             <!-- Card Viewer -->
             <div class="card__viewer--card">
+
               <!-- Text: name and description -->
               <div class="card__text">
                 <h3 class="card__text--name js-personName">Nombre Apellido</h3>
@@ -70,22 +73,22 @@
               <!-- Social links -->
               <ul class="card__viewer--social">
                 <li class="social--item">
-                  <a class="js-mobile hidden" href="tel:" title=""
+                  <a class="social-info js-mobile hidden" href=" " title=""
                     ><i class="fas fa-mobile-alt"></i
                   ></a>
                 </li>
                 <li class="social--item">
-                  <a class="js-email hidden" href="mailto:"
+                  <a class="social-info  js-email hidden" href=" "
                     ><i class="far fa-envelope"></i
                   ></a>
                 </li>
                 <li class="social--item">
-                  <a class="js-linkedin hidden" href=""
+                  <a class="social-info  js-linkedin hidden" href=" "
                     ><i class="fab fa-linkedin-in"></i
                   ></a>
                 </li>
                 <li class="social--item">
-                  <a class="js-github hidden" href=""
+                  <a class="social-info  js-github hidden" href=" "
                     ><i class="fab fa-github-alt"></i
                   ></a>
                 </li>
@@ -119,14 +122,14 @@
                             <div class="palettes__options">
                                 <div class="option option1">
                                     <label for="palette1">
-                                    <input type="radio" id="palette1" value="1" name="palette" required />
+                                    <input type="radio" class="palette" id="palette1" value="1" name="palette" required />
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div></label>
                                 </div>
                                 <div class="option option2">
                                     <label for="palette2">
-                                    <input type="radio" id="palette2" value="2" name="palette" required />
+                                    <input type="radio" class="palette" id="palette2" value="2" name="palette" required />
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div>
@@ -134,7 +137,15 @@
                                 </div>
                                 <div class="option option3">
                                     <label for="palette3">
-                                    <input type="radio" id="palette3" value="3" name="palette" required />
+                                    <input type="radio" class="palette" id="palette3" value="3" name="palette" required />
+                                    <div class="palette__color"></div>
+                                    <div class="palette__color"></div>
+                                    <div class="palette__color"></div>
+                                    </label>
+                                </div>
+                                <div class="option option4">
+                                    <label for="palette4">
+                                    <input type="radio" class="palette" id="palette4" value="4" name="palette" required />
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div>
                                     <div class="palette__color"></div>
@@ -164,8 +175,11 @@
                             <input type="text" placeholder="Ej: Front-end unicorn " id="job" name="job" required />
 
                             <label for="profile-image">Imagen de perfil</label>
-                            <input class="btn btn-addimage" type="file" id="profile-image" name="photo" value="Añadir imagen" />
-                            <div class="btn-tickimage"></div>
+                            <div class="btn-container">
+                                <input class="btn " type="file" id="profile-image" name="photo" value="Añadir imagen" />
+                                <button type="btn" class="btn-addimage">Añadir imagen</button>
+                                <div class="btn-tickimage"></div>
+                            </div>
                         
 
                             <label for="email">Email</label>
@@ -175,10 +189,10 @@
                             <input class="phone" type="tel" placeholder="Ej: 555-55-55-55" id="phone" name="phone" />
 
                             <label for="linkedin">Linkedin</label>
-                            <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" id="linkedin" name="linkedin" />
+                            <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" id="linkedin" name="linkedin"/>
 
                             <label for="github">Github</label>
-                            <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" id="github" name="github" />
+                            <input type="text" placeholder="Ej: linkedin.com/in/sally.hill" id="github" name="github"/>
 
                         </div>
                     </div>
@@ -195,13 +209,13 @@
                             <i class="arrow fas fa-chevron-down"></i>
                         </div>
                         <div class="share__container--button js-collapsibleChild hidden">
-                            <a class="button__card btn--disable" href="" title="Crear tarjeta"><i class="i__card far fa-address-card"></i>CREAR
+                            <button class="button__card btn--disable" href="" title="Crear tarjeta" disabled><i class="i__card far fa-address-card"></i>CREAR
                                 TARJETA
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="carddone">
+                <div class="carddone js-carddone hidden">
                     <h3>La tarjeta ha sido creada</h3>
                     <a class="link__card" href="" title="Enlace de la tarjeta">http://www.loquesea.com</a>
                     <a class="button__twitter" href="" title="Compartir en Twitter"><i
@@ -216,8 +230,8 @@
         <div class="wrapper">
             <span class="footer__text">Awesome profile-cards &copy; 2018</span>
             <div class="footer__container">
-                <a href="https://adalab.es/" title="Ir a la página de Adalab">
-                    <img class="footer__container--logo" src="./assets/images/logo-adalab.png" alt="Logo Adalab" />
+                <a href="./index.html" title="Ir a la página de inicio">
+                    <img class="footer__container--logo" src="./assets/images/logo-maniac-codersA.png" alt="Logo Maniac Coders" />
                 </a>
             </div>
         </div>
