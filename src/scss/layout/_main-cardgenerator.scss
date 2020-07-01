@@ -5,6 +5,7 @@
     display: grid;
     max-width: 768px;
     margin: auto;
+    border: solid 1px blue;
 
     @include tablet {
       grid-template-columns: 399px 329px;

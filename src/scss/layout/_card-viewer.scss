@@ -16,7 +16,7 @@
   .card-background {
       top: 0;
       position: absolute;
-      height: 100%;
+      height: 600px;
       width: 100%;
       content: '';
       z-index: -1;
@@ -25,14 +25,17 @@
         #bfcdd0,
         $color-background-card2
       );
+      transition: all 1s ease;
+      transform-origin: top center;
 
       @include tablet {
         border-radius: 6px;
       }
   }
   @include tablet {
-    height: 812px;
-    padding-top: 173px;
+    height: 750px;
+    padding-top: 90px;
+    transition: padding-top .7s ease;
     margin: 20px 0 20px 0;
     border-radius: 6px;
   }
@@ -130,6 +133,13 @@
         margin: 5px;
         text-align: center;
         color: $color-primary;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $color-palete1-light;
+        }
+            
+        
       }
       .hidden {
         display: none;
@@ -137,3 +147,16 @@
     }
   }
 }
+
+
+
+.large {
+    height: 750px;
+    padding-top: 160px;
+
+    .card-background {
+        transform-origin: top center;
+        transform: scaleY(1.25);
+    }
+}
+// padding-top: 173px;

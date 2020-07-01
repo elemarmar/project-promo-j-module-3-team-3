@@ -392,6 +392,10 @@
     .social--item a {
     border-color: $color-palete1-light;
     color: $color-palete1-dark;
+
+    &:hover {
+        background-color: $color-palete1-light;
+    }
         }
     }
     
@@ -414,6 +418,12 @@
     .social--item a {
     border-color: $color-palete2-light;
     color: $color-palete2-dark;
+
+
+    &:hover {
+        background-color: $color-palete2-light;
+        color: white;
+    }
     }
     }
     
@@ -435,6 +445,10 @@
       .social--item a{
     border-color: $color-palete3-light;
     color: $color-palete3-dark;
+
+    &:hover {
+        background-color: $color-palete3-light;
+    }
     }
 
 
@@ -459,6 +473,11 @@
     .social--item a{
   border-color: $color-palete4-light;
   color: $color-palete4-dark;
+
+  &:hover {
+    background-color: $color-palete4-light;
+    color: white;
+}
   }
 }
 
