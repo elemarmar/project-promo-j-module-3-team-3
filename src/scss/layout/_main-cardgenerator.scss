@@ -40,3 +40,28 @@
     }
   }
 }
+
+
+
+.evil-bot__container {
+    position: fixed;
+    border: solid 1px red;
+    bottom: 80px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    background-image: url('../images/stop.png');
+    background-size: contain;
+    background-position: center;
+    
+    @media all and (max-width: 768px) {
+        // Appear when scroll...
+
+        bottom: 358px;
+    }
+
+    &:hover {
+        background-image: url('../images/talk.gif');
+    }
+}

@@ -3,7 +3,7 @@
 ****************************/
 
 .card__viewer {
-  height: 457px;
+  height: 500px;
   // width: 320px;
   width: auto;
   padding-top: 38px;
@@ -12,11 +12,16 @@
   position: relative;
   z-index: 1;
 
+  @media all and (max-width: 768px) {
+      position: sticky;
+      top: -70px;
+  }
+
   // Card background
   .card-background {
       top: 0;
       position: absolute;
-      height: 600px;
+      height: 500px;
       width: 100%;
       content: '';
       z-index: -1;
@@ -29,6 +34,7 @@
       transform-origin: top center;
 
       @include tablet {
+        height: 600px;
         border-radius: 6px;
       }
   }
@@ -151,12 +157,23 @@
 
 
 .large {
-    height: 750px;
+    height: 457px;
     padding-top: 160px;
+
+    @media all and (max-width:768px) {
+        height: 500px;
+        padding-top: 38px;
+        border: solid 1px red;
+    }
 
     .card-background {
         transform-origin: top center;
         transform: scaleY(1.25);
+
+        @media all and (max-width:768px) {
+            transform: scaleY(1);
+            max-height: 500px;
+        }
     }
 }
 // padding-top: 173px;

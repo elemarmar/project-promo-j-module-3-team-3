@@ -1,6 +1,12 @@
 
 
 .form {
+
+    margin-top: 0;
+
+    @include tablet {
+        margin-top: 0;
+    }
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -351,11 +357,7 @@
 }
 
 .form .hidden {
-
-    // opacity: 0;
-    // animation: shrinkUp .5s ease forwards;
     display: none;
-    // transform-origin: top center;
   }
 
   .js-collapsibleChild {
@@ -486,4 +488,17 @@
 
 .run-animation {
     animation: animatedBackground 2s ease;
+}
+
+
+.animate-design {
+    animation: shrinkDesign 1s ease forwards;
+}
+
+.animate-fill {
+    animation: shrinkFill 1s ease forwards;
+}
+
+.animate-share {
+    animation: shrinkShare 1s ease forwards;
 }
