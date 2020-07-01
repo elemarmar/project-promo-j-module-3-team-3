@@ -2,7 +2,6 @@
   background-color: $color-background;
   text-align: center;
   flex-grow: 1;
-
 }
 .main {
   width: 100%;
@@ -15,11 +14,10 @@
   align-items: center;
   padding-bottom: 30px;
 
-
   &__title {
     width: 250px;
     height: 63px;
-    margin-bottom: 35.4px;
+    margin-bottom: 60px;
     &-img {
       width: 100%;
     }
@@ -43,7 +41,8 @@
     width: 268px;
     // height: 73.8px;
     border-radius: 4px;
-    border: solid 1.6px rgba(225, 115, 52, 0.21);
+    border: solid 1.6px rgba(027, 142, 006, 0.21);
+    //  rgba(225, 115, 52, 0.21);
     // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
 
     padding: 15px 20px 17.8px;
@@ -82,8 +81,8 @@
     width: 129px;
     height: 42px;
     border-radius: 21px;
-    background-color: $color-palete1-normal;
-    border: $color-palete1-normal;
+    background-color: #c479d5; //$color-palete1-normal;
+    border: #c479d5; //$color-palete1-normal;
     color: $color-light;
     font-family: $font-primary;
     font-size: 1rem;
@@ -91,11 +90,11 @@
     text-transform: uppercase;
     margin-top: 38.6px;
     padding: 10px 20px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 
     &:hover {
-        cursor: pointer;
-        background-color: $color-palete1-dark;
+      cursor: pointer;
+      background-color: $color-palete4-normal; //$color-palete1-dark;
     }
   }
 }
@@ -109,7 +108,7 @@
     &__title {
       width: 419px;
       height: 105px;
-      margin-bottom: 31px;
+      margin-bottom: 100px;
     }
     &__text {
       margin-bottom: 27px;
@@ -124,7 +123,8 @@
       width: 325px;
       // height: 86px;
       border-radius: 5px;
-      border: solid 2px rgba(225, 115, 52, 0.21);
+      border: solid 2px rgba(027, 142, 006, 0.21);
+      //  rgba(225, 115, 52, 0.21);
       grid-column-gap: 30px;
       &-list {
         width: 75px;
@@ -143,13 +143,12 @@
   }
 }
 
-
 /********* Animation *********/
 
 .main__menu-icons {
-    animation: up-fade 3s ease;
+  animation: up-fade 3s ease;
 }
 
 .main__menu-text {
-    animation: drop-fade 3s ease;
+  animation: drop-fade 3s ease;
 }

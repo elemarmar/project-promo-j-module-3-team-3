@@ -1,7 +1,7 @@
 .header {
   display: flex;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -12,12 +12,16 @@
   }
 
   &__main {
-    height: 50px;
+    height: 100px;
     width: 201px;
+
+    &--logo {
+      height: 100%;
+    }
   }
 
   &.wrapper {
-      max-width: 1224px;
-      margin: auto;
+    max-width: 1224px;
+    margin: auto;
   }
 }
