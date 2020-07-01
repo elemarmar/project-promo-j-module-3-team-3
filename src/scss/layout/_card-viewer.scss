@@ -14,21 +14,21 @@
 
   // Card background
   .card-background {
-      top: 0;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      content: '';
-      z-index: -1;
-      background-image: linear-gradient(
-        to bottom,
-        #bfcdd0,
-        $color-background-card2
-      );
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    z-index: -1;
+    background-image: linear-gradient(
+      to bottom,
+      #bfcdd0,
+      $color-background-card2
+    );
 
-      @include tablet {
-        border-radius: 6px;
-      }
+    @include tablet {
+      border-radius: 6px;
+    }
   }
   @include tablet {
     height: 812px;
@@ -84,11 +84,15 @@
       font-size: 18px;
       line-height: 1.11;
       padding-bottom: 4px;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     &--description {
       color: $color-text;
       line-height: 1.25;
+      word-wrap: break-word;
+      word-break: break-word;
     }
   }
 
