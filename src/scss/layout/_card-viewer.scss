@@ -90,6 +90,8 @@
       color: $color-text;
       line-height: 1.25;
     }
+
+  
   }
 
   /*****************************
@@ -102,7 +104,8 @@
 
   &--img {
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
   }
 
   /*************************

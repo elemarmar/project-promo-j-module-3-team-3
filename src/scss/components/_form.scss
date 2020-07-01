@@ -195,7 +195,6 @@
     }
 
     .btn-addimage {
-        width: 140px;
         height: 30px;
         background-color: $color-secondary;
         color: $color-light;
@@ -220,13 +219,24 @@
          }
       }
 
-      .btn-tickimage {
+      .action__image-preview{
+        display: flex;
+        position:relative;
+      }
+      .action, .profile {
+          display: inline-block;
+      }
+      .profile__preview {
         border: 1px solid $color-palete1-light;
         height: 30px;
         width: 30px;
         margin-left: 20px;
         display: inline-block;
+        background-size: cover;
+        background-position: center;
       }
+
+
   }
   
   input {
