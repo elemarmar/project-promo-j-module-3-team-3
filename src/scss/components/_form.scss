@@ -1,5 +1,3 @@
-
-
 .form {
   i {
     display: inline-block;
@@ -18,7 +16,7 @@
     color: $color-text;
     margin-left: auto;
     line-height: 1.5;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 
     &:hover {
       cursor: pointer;
@@ -26,8 +24,8 @@
   }
 
   .arrow-active {
-      transform: rotateX(180deg);
-      color: $color-secondary;
+    transform: rotateX(180deg);
+    color: $color-secondary;
   }
 
   input {
@@ -52,7 +50,6 @@
       padding: 27px 30px 30px 40px;
     }
   }
-
 }
 
 .design {
@@ -97,14 +94,13 @@
         align-items: center;
         margin: 20px 0px 20px 20px;
 
-
         input {
           margin-right: 10px;
         }
 
         label {
-            display: flex;
-            align-items: center;
+          display: flex;
+          align-items: center;
         }
       }
       .option1 {
@@ -166,7 +162,6 @@
     display: flex;
     flex-direction: column;
 
-
     &--title {
       display: flex;
       h3 {
@@ -182,53 +177,49 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 30px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 
     .btn-container {
-        position: relative;
-        display: flex;
+      position: relative;
+      display: flex;
 
-        &:hover {
-            cursor: pointer;
-        }
-
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .btn-addimage {
-        width: 140px;
-        height: 30px;
-        background-color: $color-secondary;
-        color: $color-light;
-        border-radius: 3px;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-        border: 0;
-        font-size: 14px;
+      width: 140px;
+      height: 30px;
+      background-color: $color-secondary;
+      color: $color-light;
+      border-radius: 3px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+      border: 0;
+      font-size: 14px;
+    }
 
+    input[type='file'] {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      width: 140px;
+      opacity: 0;
+
+      &:hover ~ .btn-addimage {
+        background-color: $color-palete2-light;
       }
+    }
 
-      input[type='file'] {
-          position: absolute;
-          top: 0;
-          left: 10px;
-          width: 140px;
-          opacity: 0;
-
-
-          &:hover ~ .btn-addimage {
-            background-color: $color-palete2-light;
-
-         }
-      }
-
-      .btn-tickimage {
-        border: 1px solid $color-palete1-light;
-        height: 30px;
-        width: 30px;
-        margin-left: 20px;
-        display: inline-block;
-      }
+    .btn-tickimage {
+      border: 1px solid $color-palete1-light;
+      height: 30px;
+      width: 30px;
+      margin-left: 20px;
+      display: inline-block;
+    }
   }
-  
+
   input {
     font-size: 14px;
     line-height: 30px;
@@ -242,8 +233,6 @@
   .container-image {
     display: flex;
     margin-top: 7px;
-
-
 
     .btn-tickimage {
       border: 1px solid $color-palete1-light;
@@ -304,6 +293,11 @@
   }
 }
 
+// FOCUS OUTLINE
+.button__card:focus {
+  outline: none;
+}
+
 .carddone {
   border-bottom: 1px solid $color-border;
   text-align: center;
@@ -341,34 +335,32 @@
 }
 
 .form .hidden {
+  // opacity: 0;
+  // animation: shrinkUp .5s ease forwards;
+  display: none;
+  // transform-origin: top center;
+}
 
-    // opacity: 0;
-    // animation: shrinkUp .5s ease forwards;
-    display: none;
-    // transform-origin: top center;
-  }
-
-  .js-collapsibleChild {
-    animation: growDown .3s ease forwards;
-    transform-origin: top center;
-    opacity: 1;
-    overflow: hidden;
-  };
+.js-collapsibleChild {
+  animation: growDown 0.3s ease forwards;
+  transform-origin: top center;
+  opacity: 1;
+  overflow: hidden;
+}
 
 /**************************
 *   Colores palettes      *
 **************************/
 
-
-.js-palette1 { 
-    .card-background {
-        background-image: linear-gradient(
-        to bottom,
-        #bfcdd0,
-        $color-background-card2
-      );
-    }
-  .card__text--name { 
+.js-palette1 {
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      #bfcdd0,
+      $color-background-card2
+    );
+  }
+  .card__text--name {
     color: $color-palete1-dark;
     border-color: $color-palete1-normal;
   }
@@ -377,22 +369,24 @@
     border-color: $color-palete1-normal;
   }
 
-
   .card__viewer--social {
     .social--item a {
-    border-color: $color-palete1-light;
-    color: $color-palete1-dark;
-        }
+      border-color: $color-palete1-light;
+      color: $color-palete1-dark;
     }
-    
+  }
 }
 
-.js-palette2 { 
-    // animation: animatedBackground .3s ease forwards;
-    .card-background{
-        background-image: linear-gradient(to bottom, rgb(241, 207, 207), rgb(226, 159, 171)) !important;
-    }
-    .card__text--name { 
+.js-palette2 {
+  // animation: animatedBackground .3s ease forwards;
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(241, 207, 207),
+      rgb(226, 159, 171)
+    ) !important;
+  }
+  .card__text--name {
     color: $color-palete2-dark;
   }
 
@@ -402,18 +396,21 @@
 
   .card__viewer--social {
     .social--item a {
-    border-color: $color-palete2-light;
-    color: $color-palete2-dark;
+      border-color: $color-palete2-light;
+      color: $color-palete2-dark;
     }
-    }
-    
+  }
 }
-.js-palette3 { 
-    .card-background {
+.js-palette3 {
+  .card-background {
     // background-image: linear-gradient(to bottom, rgb(17, 168, 110), rgb(29, 46, 122)) !important;
-        background-image: linear-gradient(to bottom, rgb(245, 232, 173) 60%, rgb(192, 179, 130)) !important;
-}
-    .card__text--name { 
+    background-image: linear-gradient(
+      to bottom,
+      rgb(245, 232, 173) 60%,
+      rgb(192, 179, 130)
+    ) !important;
+  }
+  .card__text--name {
     color: $color-palete3-dark;
   }
 
@@ -422,39 +419,37 @@
   }
 
   .card__viewer--social {
-      .social--item a{
-    border-color: $color-palete3-light;
-    color: $color-palete3-dark;
+    .social--item a {
+      border-color: $color-palete3-light;
+      color: $color-palete3-dark;
     }
-
-
-}
-
-}
-
-.js-palette4 { 
-    .card-background {
-  background-image: linear-gradient(to bottom, rgb(219, 159, 238), rgb(17, 33, 106)) !important;
-
-}
-  .card__text--name { 
-  color: $color-palete4-dark;
-}
-
-.card__text {
-  border-color: $color-palete4-normal;
-}
-
-.card__viewer--social {
-    .social--item a{
-  border-color: $color-palete4-light;
-  color: $color-palete4-dark;
   }
 }
 
+.js-palette4 {
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(219, 159, 238),
+      rgb(17, 33, 106)
+    ) !important;
+  }
+  .card__text--name {
+    color: $color-palete4-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete4-normal;
+  }
+
+  .card__viewer--social {
+    .social--item a {
+      border-color: $color-palete4-light;
+      color: $color-palete4-dark;
+    }
+  }
 }
 
-
 .run-animation {
-    animation: animatedBackground 2s ease;
+  animation: animatedBackground 2s ease;
 }
