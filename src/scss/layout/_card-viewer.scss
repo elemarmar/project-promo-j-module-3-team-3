@@ -54,7 +54,7 @@
 }
 
 .card {
-    /******************************************
+  /******************************************
     *      Card text: name & description      *
     ******************************************/
   &__text {
@@ -68,15 +68,19 @@
       font-size: 18px;
       line-height: 1.11;
       padding-bottom: 4px;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     &--description {
       color: $color-text;
       line-height: 1.25;
+      word-wrap: break-word;
+      word-break: break-word;
     }
   }
 
-    /*****************************
+  /*****************************
     *      Card profile pic      *
     *****************************/
   &__container--img {
