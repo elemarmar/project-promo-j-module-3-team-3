@@ -11,8 +11,8 @@
   }
 }
 
-
-
-// Animations
-
-
+@mixin mobile {
+  @media all and (min-width: $small) {
+    @content;
+  }
+}
