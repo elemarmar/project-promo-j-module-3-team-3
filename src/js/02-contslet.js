@@ -9,7 +9,7 @@ function showCollapsible(event) {
   const colBox = document.querySelectorAll(".js-collapsibleChild");
 
   // Caso 1: Pulsamos design
-    card.classList.remove("large");
+
     
   if (
     event.target === colTitle[0] ||
@@ -22,7 +22,8 @@ function showCollapsible(event) {
 
     colArrow[0].classList.toggle("arrow-active");
     colArrow[1].classList.remove("arrow-active");
-    colArrow[2].classList.remove("arrow-active");
+      colArrow[2].classList.remove("arrow-active");
+      card.classList.remove("large");
 
     // Caso 2: Pulsamos fill
   } else if (
@@ -53,8 +54,10 @@ function showCollapsible(event) {
 
     colArrow[0].classList.remove("arrow-active");
     colArrow[1].classList.remove("arrow-active");
-    colArrow[2].classList.toggle("arrow-active");
+      colArrow[2].classList.toggle("arrow-active");
+      card.classList.remove("large");
   }
 }
 
 document.addEventListener("click", showCollapsible);
+
