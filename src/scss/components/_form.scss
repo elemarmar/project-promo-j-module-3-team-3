@@ -1,4 +1,10 @@
 .form {
+
+    margin-top: 0;
+
+    @include tablet {
+        margin-top: 0;
+    }
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -210,13 +216,24 @@
       }
     }
 
-    .btn-tickimage {
-      border: 1px solid $color-palete1-light;
-      height: 30px;
-      width: 30px;
-      margin-left: 20px;
-      display: inline-block;
-    }
+      .action__image-preview{
+        display: flex;
+        position:relative;
+      }
+      .action, .profile {
+          display: inline-block;
+      }
+      .profile__preview {
+        border: 1px solid $color-palete1-light;
+        height: 30px;
+        width: 30px;
+        margin-left: 20px;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+      }
+
+
   }
 
   input {
@@ -335,18 +352,15 @@
 }
 
 .form .hidden {
-  // opacity: 0;
-  // animation: shrinkUp .5s ease forwards;
-  display: none;
-  // transform-origin: top center;
-}
+    display: none;
+  }
 
-.js-collapsibleChild {
-  animation: growDown 3s ease forwards;
-  transform-origin: top center;
-  opacity: 1;
-  overflow: hidden;
-}
+  .js-collapsibleChild {
+    animation: growDown .3s ease forwards;
+    transform-origin: top center;
+    opacity: 1;
+    overflow: hidden;
+  };
 
 /**************************
 *   Colores palettes      *
@@ -371,8 +385,13 @@
 
   .card__viewer--social {
     .social--item a {
-      border-color: $color-palete1-light;
-      color: $color-palete1-dark;
+    border-color: $color-palete1-light;
+    color: $color-palete1-dark;
+
+    &:hover {
+        background-color: $color-palete1-light;
+    }
+        }
     }
   }
 }
@@ -396,8 +415,14 @@
 
   .card__viewer--social {
     .social--item a {
-      border-color: $color-palete2-light;
-      color: $color-palete2-dark;
+    border-color: $color-palete2-light;
+    color: $color-palete2-dark;
+
+
+    &:hover {
+        background-color: $color-palete2-light;
+        color: white;
+    }
     }
   }
 }
@@ -419,9 +444,13 @@
   }
 
   .card__viewer--social {
-    .social--item a {
-      border-color: $color-palete3-light;
-      color: $color-palete3-dark;
+      .social--item a{
+    border-color: $color-palete3-light;
+    color: $color-palete3-dark;
+
+    &:hover {
+        background-color: $color-palete3-light;
+    }
     }
   }
 }
@@ -454,7 +483,17 @@
   animation: animatedBackground 2s ease;
 }
 
-/*-----*/
+.card__viewer--social {
+    .social--item a{
+  border-color: $color-palete4-light;
+  color: $color-palete4-dark;
+
+  &:hover {
+    background-color: $color-palete4-light;
+    color: white;
+}
+  }
+}
 
 .hide-design {
   animation: shrinkDesign 1s ease forwards;
@@ -466,4 +505,17 @@
 
 .hide-share {
   animation: shrinkShare 1s ease forwards;
+}
+
+
+.animate-design {
+    animation: shrinkDesign 1s ease forwards;
+}
+
+.animate-fill {
+    animation: shrinkFill 1s ease forwards;
+}
+
+.animate-share {
+    animation: shrinkShare 1s ease forwards;
 }

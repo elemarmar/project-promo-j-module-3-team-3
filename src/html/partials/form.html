@@ -102,14 +102,28 @@
             required
           />
 
-          <label for="job">Puesto</label>
-          <input
-            type="text"
-            placeholder="Ej: Front-end unicorn "
-            id="job"
-            name="job"
-            required
-          />
+
+                    <label for="img-selector">Imagen de perfil</label> 
+                    <!-- De aquí -->
+                    
+                    <div class="action__image-preview">
+                        <div class="action">
+                            
+                            <button class="action__upload-btn js__profile-trigger btn-addimage" type="button">Añadir imagen</button>
+                            <input type="file" name="" id="img-selector" class="action__hiddenField js__profile-upload-btn">
+                        </div>
+                        <div class="profile"> <!--btn-container -->
+                            <div class="profile__image js__profile-image" style="background-image:url(https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE)"></div>
+                            <div class="profile__preview js__profile-preview"></div>
+                        </div>
+                    </div>
+
+                  
+
+
+                    <!-- Aquí -->
+                    
+                
 
           <label for="profile-image">Imagen de perfil</label>
           <div class="btn-container">

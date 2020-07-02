@@ -104,6 +104,8 @@
       word-wrap: break-word;
       word-break: break-word;
     }
+
+  
   }
 
   /*****************************
@@ -116,7 +118,8 @@
 
   &--img {
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
   }
 
   /*************************
@@ -141,6 +144,13 @@
         margin: 5px;
         text-align: center;
         color: $color-primary;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $color-palete1-light;
+        }
+            
+        
       }
       .hidden {
         display: none;
