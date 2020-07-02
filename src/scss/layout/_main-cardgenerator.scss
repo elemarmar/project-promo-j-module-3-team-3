@@ -9,6 +9,7 @@
 
     @include tablet {
       grid-template-columns: 399px 329px;
+      height: 800px;
     }
     @include desktop {
       grid-template-columns: 1fr 585px;
