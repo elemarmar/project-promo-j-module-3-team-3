@@ -1,29 +1,27 @@
 .btn {
+  &--reset {
+    height: 30px;
+    width: 75px;
 
-    &--reset {
-        height: 30px;
-        width: 75px;
-        
-        //Background & border
-        border-radius: 15px;
-        background-color: transparent;
-        border: solid 1px $color-light;
+    //Background & border
+    border-radius: 15px;
+    background-color: transparent;
+    border: solid 1px $color-light;
 
-        // Font
-        font-size: 12px;
-        text-transform: uppercase;
-        line-height: 1.67;
-        color: $color-text;
-        cursor: pointer;
+    // Font
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.67;
+    color: $color-text;
+    cursor: pointer;
 
-        &:hover {
-            background-color: $color-light;
-            color: $color-palete2-light;
-            // color: $color-palete2-light;
-        }
-
-        &:focus {
-            outline: none;
-          }
+    &:hover {
+      background-color: $color-light;
+      color: $color-secondary;
     }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

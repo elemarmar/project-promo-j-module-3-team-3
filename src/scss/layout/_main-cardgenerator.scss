@@ -5,13 +5,14 @@
     display: grid;
     max-width: 768px;
     margin: auto;
+    border: solid 1px blue;
 
     @include tablet {
       grid-template-columns: 399px 329px;
     }
     @include desktop {
-        grid-template-columns: 1fr 585px;
-        max-width: 1024px;
+      grid-template-columns: 1fr 585px;
+      max-width: 1024px;
     }
 
     /* Colocar card-viewer en tableta y desktop */
@@ -22,7 +23,7 @@
       }
 
       @include desktop {
-          grid-column: 2 / 3;
+        grid-column: 2 / 3;
       }
     }
     /* Colocar form en tableta y desktop */
@@ -37,5 +38,29 @@
         grid-column: 1 / 2;
       }
     }
+  }
+}
+
+// Evil bot
+.evil-bot__container {
+  position: fixed;
+  border: solid 1px red;
+  bottom: 80px;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+  background-image: url("../images/stop.png");
+  background-size: contain;
+  background-position: center;
+
+  @media all and (max-width: 768px) {
+    // Appear when scroll...
+
+    bottom: 358px;
+  }
+
+  &:hover {
+    background-image: url("../images/talk.gif");
   }
 }

@@ -182,10 +182,7 @@
     .btn-container {
       position: relative;
       display: flex;
-
-      &:hover {
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
 
     .btn-addimage {
@@ -197,17 +194,19 @@
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
       border: 0;
       font-size: 14px;
+      cursor: pointer;
     }
 
-    input[type='file'] {
+    input[type="file"] {
       position: absolute;
       top: 0;
       left: 10px;
       width: 140px;
       opacity: 0;
+      cursor: pointer;
 
       &:hover ~ .btn-addimage {
-        background-color: $color-palete2-light;
+        background-color: $color-palete4-light; //$color-palete2-light;
       }
     }
 
@@ -242,6 +241,7 @@
       .btn-selectfile {
         display: inline-block;
         width: 30px;
+        cursor: pointer;
       }
     }
   }
@@ -342,7 +342,7 @@
 }
 
 .js-collapsibleChild {
-  animation: growDown 0.3s ease forwards;
+  animation: growDown 3s ease forwards;
   transform-origin: top center;
   opacity: 1;
   overflow: hidden;
@@ -452,4 +452,18 @@
 
 .run-animation {
   animation: animatedBackground 2s ease;
+}
+
+/*-----*/
+
+.hide-design {
+  animation: shrinkDesign 1s ease forwards;
+}
+
+.hide-fill {
+  animation: shrinkFill 1s ease forwards;
+}
+
+.hide-share {
+  animation: shrinkShare 1s ease forwards;
 }
