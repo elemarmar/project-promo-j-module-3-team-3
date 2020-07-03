@@ -1,6 +1,10 @@
-
-
 .form {
+
+    margin-top: 0;
+
+    @include tablet {
+        margin-top: 0;
+    }
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -18,10 +22,16 @@
     color: $color-text;
     margin-left: auto;
     line-height: 1.5;
+    transition: all 0.5s ease;
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .arrow-active {
+    transform: rotateX(180deg);
+    color: $color-secondary;
   }
 
   input {
@@ -35,6 +45,10 @@
     padding-bottom: 7px;
   }
 
+  h3 {
+    cursor: pointer;
+  }
+
   .wrapper {
     padding: 27px 20px 30px 20px;
 
@@ -42,7 +56,6 @@
       padding: 27px 30px 30px 40px;
     }
   }
-
 }
 
 .design {
@@ -90,6 +103,11 @@
         input {
           margin-right: 10px;
         }
+
+        label {
+          display: flex;
+          align-items: center;
+        }
       }
       .option1 {
         margin-top: 31px;
@@ -125,6 +143,17 @@
           background-color: $color-palete3-light;
         }
       }
+      .option4 {
+        .palette__color:nth-child(1n) {
+          background-color: $color-palete4-normal;
+        }
+        .palette__color:nth-child(2n) {
+          background-color: $color-palete4-dark;
+        }
+        .palette__color:nth-child(4n) {
+          background-color: $color-palete4-light;
+        }
+      }
     }
   }
 }
@@ -133,7 +162,7 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $color-border;
-  padding-bottom: 30px;
+
   .container__fill {
     padding: 10px 0px;
     display: flex;
@@ -153,8 +182,60 @@
   .fill-box {
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
+    transition: all 0.5s ease;
+
+    .btn-container {
+      position: relative;
+      display: flex;
+      cursor: pointer;
+    }
+
+    .btn-addimage {
+      width: 140px;
+      height: 30px;
+      background-color: $color-secondary;
+      color: $color-light;
+      border-radius: 3px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+      border: 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      width: 140px;
+      opacity: 0;
+      cursor: pointer;
+
+      &:hover ~ .btn-addimage {
+        background-color: $color-palete4-light; //$color-palete2-light;
+      }
+    }
+
+      .action__image-preview{
+        display: flex;
+        position:relative;
+      }
+      .action, .profile {
+          display: inline-block;
+      }
+      .profile__preview {
+        border: 1px solid $color-palete1-light;
+        height: 30px;
+        width: 30px;
+        margin-left: 20px;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+      }
+
+
   }
-  
+
   input {
     font-size: 14px;
     line-height: 30px;
@@ -169,19 +250,6 @@
     display: flex;
     margin-top: 7px;
 
-    .btn-addimage {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      width: 140px;
-      height: 30px;
-      background-color: $color-secondary;
-      color: $color-light;
-      border-radius: 3px;
-      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-      // padding: 3px 22px 7px; Mirar padding
-    }
-
     .btn-tickimage {
       border: 1px solid $color-palete1-light;
       height: 30px;
@@ -190,6 +258,7 @@
       .btn-selectfile {
         display: inline-block;
         width: 30px;
+        cursor: pointer;
       }
     }
   }
@@ -227,15 +296,23 @@
         border-radius: 12px;
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
+        border: none;
+        cursor: pointer;
       }
       .btn--enable {
         background-color: $color-secondary;
       }
       .btn--disable {
         background-color: $color-disable-btn;
+        cursor: not-allowed;
       }
     }
   }
+}
+
+// FOCUS OUTLINE
+.button__card:focus {
+  outline: none;
 }
 
 .carddone {
@@ -277,3 +354,167 @@
 .form .hidden {
     display: none;
   }
+
+  .js-collapsibleChild {
+    animation: growDown .3s ease forwards;
+    transform-origin: top center;
+    opacity: 1;
+    overflow: hidden;
+  };
+
+/**************************
+*   Colores palettes      *
+**************************/
+
+.js-palette1 {
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      #bfcdd0,
+      $color-background-card2
+    );
+  }
+  .card__text--name {
+    color: $color-palete1-dark;
+    border-color: $color-palete1-normal;
+  }
+
+  .card__text {
+    border-color: $color-palete1-normal;
+  }
+
+  .card__viewer--social {
+    .social--item a {
+    border-color: $color-palete1-light;
+    color: $color-palete1-dark;
+
+    &:hover {
+        background-color: $color-palete1-light;
+    }
+        }
+    }
+}
+
+.js-palette2 {
+  // animation: animatedBackground .3s ease forwards;
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(241, 207, 207),
+      rgb(226, 159, 171)
+    ) !important;
+  }
+  .card__text--name {
+    color: $color-palete2-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete2-normal;
+  }
+
+  .card__viewer--social {
+    .social--item a {
+    border-color: $color-palete2-light;
+    color: $color-palete2-dark;
+
+
+    &:hover {
+        background-color: $color-palete2-light;
+        color: white;
+    }
+    }
+  }
+}
+.js-palette3 {
+  .card-background {
+    // background-image: linear-gradient(to bottom, rgb(17, 168, 110), rgb(29, 46, 122)) !important;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(245, 232, 173) 60%,
+      rgb(192, 179, 130)
+    ) !important;
+  }
+  .card__text--name {
+    color: $color-palete3-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete3-normal;
+  }
+
+  .card__viewer--social {
+      .social--item a{
+    border-color: $color-palete3-light;
+    color: $color-palete3-dark;
+
+    &:hover {
+        background-color: $color-palete3-light;
+    }
+    }
+  }
+}
+
+.js-palette4 {
+  .card-background {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(219, 159, 238),
+      rgb(17, 33, 106)
+    ) !important;
+  }
+  .card__text--name {
+    color: $color-palete4-dark;
+  }
+
+  .card__text {
+    border-color: $color-palete4-normal;
+  }
+
+  .card__viewer--social {
+    .social--item a {
+      border-color: $color-palete4-light;
+      color: $color-palete4-dark;
+    }
+  }
+}
+
+.run-animation {
+  animation: animatedBackground 2s ease;
+}
+
+.card__viewer--social {
+    .social--item a{
+  border-color: $color-palete4-light;
+  color: $color-palete4-dark;
+
+  &:hover {
+    background-color: $color-palete4-light;
+    color: white;
+}
+  }
+}
+
+.hide-design {
+  animation: shrinkDesign 1s ease forwards;
+}
+
+.hide-fill {
+  animation: shrinkFill 1s ease forwards;
+}
+
+.hide-share {
+  animation: shrinkShare 1s ease forwards;
+}
+
+
+.animate-design {
+    animation: shrinkDesign 1s ease forwards;
+}
+
+.animate-fill {
+    animation: shrinkFill 1s ease forwards;
+}
+
+.animate-share {
+    animation: shrinkShare 1s ease forwards;
+}

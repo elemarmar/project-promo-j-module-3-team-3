@@ -3,20 +3,46 @@
 ****************************/
 
 .card__viewer {
-  height: 457px;
+  height: 500px;
   // width: 320px;
   width: auto;
   padding-top: 38px;
-  background-image: linear-gradient(
-    to bottom,
-    #bfcdd0,
-    $color-background-card2
-  );
   text-align: left;
+  transition: background-color 2s ease;
+  position: relative;
+  z-index: 1;
 
+  // Card fixed en móvil
+  // @media all and (max-width: 768px) {
+  //   position: sticky;
+  //   top: -70px;
+  // }
+
+  // Card background
+  .card-background {
+    top: 0;
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    content: "";
+    z-index: -1;
+    background-image: linear-gradient(
+      to bottom,
+      #bfcdd0,
+      $color-background-card2
+    );
+    transition: all 1s ease;
+    transform-origin: top center;
+
+    @include tablet {
+      height: 600px;
+      border-radius: 6px;
+    }
+  }
   @include tablet {
-    height: 812px;
-    padding-top: 173px;
+    height: 750px;
+    padding-top: 90px;
+    transition: padding-top 0.7s ease;
     margin: 20px 0 20px 0;
     border-radius: 6px;
   }
@@ -43,9 +69,9 @@
     **************************/
   &--card {
     width: 100%;
-    height: 329px;
+    min-height: 329px;
     margin-top: 20px;
-    padding: 21px 0 12px;
+    padding-top: 21px;
     border-radius: 2px;
     box-shadow: 0 1px 10px 0 rgba($color-dark, 0.8),
       0 1px 3px 0 rgba(0, 0, 0, 0.35);
@@ -78,6 +104,8 @@
       word-wrap: break-word;
       word-break: break-word;
     }
+
+  
   }
 
   /*****************************
@@ -90,7 +118,8 @@
 
   &--img {
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
   }
 
   /*************************
@@ -100,17 +129,55 @@
   &__viewer--social {
     display: flex;
     justify-content: flex-start;
-    padding-left: 15px;
+    align-items: center;
+    height: 54px;
+    padding-left: 20px;
 
     .social--item {
-      height: 32px;
-      width: 32px;
-      line-height: 30px;
-      border: solid 2px $color-palete1-light;
-      border-radius: 50%;
-      margin: 5px;
-      text-align: center;
-      color: $color-primary;
+      a {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        line-height: 28px;
+        border: solid 2px $color-palete1-light;
+        border-radius: 50%;
+        margin: 5px;
+        text-align: center;
+        color: $color-primary;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: $color-palete1-light;
+        }
+            
+        
+      }
+      .hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+/*----------------*/
+
+.large {
+  height: 457px;
+  padding-top: 160px;
+
+  @media all and (max-width: 768px) {
+    height: 500px;
+    padding-top: 38px;
+    border: solid 1px red;
+  }
+
+  .card-background {
+    transform-origin: top center;
+    transform: scaleY(1.25);
+
+    @media all and (max-width: 768px) {
+      transform: scaleY(1);
+      max-height: 500px;
     }
   }
 }
