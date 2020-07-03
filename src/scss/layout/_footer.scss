@@ -1,18 +1,18 @@
 .footer {
-  flex-grow: 0;
   height: 110px;
+  width: 100%;
   padding-top: 18px;
   padding-bottom: 20px;
-   border-top: 1px solid $color-border;
-   box-sizing: content-box;
-   display: flex;
-   align-items: center;
+  border-top: 1px solid $color-border;
+  background-color: $color-light;
+  //box-sizing: content-box;
+
+  position: relative;
+  bottom: 0;
 
   @include tablet {
     padding: 0;
     height: 60px;
-
-    
   }
 
   &__text {
@@ -32,7 +32,7 @@
   }
 
   .wrapper {
-      flex-grow: 1;
+    flex-grow: 1;
     max-width: 1224px;
     height: 60px;
     margin: auto;
@@ -44,9 +44,8 @@
     padding-left: 41px;
 
     @include tablet {
-        flex-direction: row;
-        justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
     }
-
   }
 }

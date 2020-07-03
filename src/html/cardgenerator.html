@@ -22,21 +22,23 @@
     <title>Diseña tu tarjeta de visita</title>
   </head>
   <body>
-    <include src="./partials/header.html"></include>
+    <div class="card-generator">
+      <include src="./partials/header.html"></include>
 
-    <!-- Main -->
-    <main class="main__card-generator">
-      <div class="card-generator__wrapper">
-        <!-- Section: "Card Viewer" -->
-        <include src="./partials/card-viewer.html"></include>
+      <!-- Main -->
+      <main class="main__card-generator">
+        <div class="card-generator__wrapper">
+          <!-- Section: "Card Viewer" -->
+          <include src="./partials/card-viewer.html"></include>
 
-        <!-- Section: "Card Generator?" -->
-        <include src="./partials/form.html"></include>
-      </div>
+          <!-- Section: "Card Generator?" -->
+          <include src="./partials/form.html"></include>
+        </div>
 
-      <div class="evil-bot__container"></div>
-    </main>
-    <include src="./partials/footer.html"></include>
+        <div class="evil-bot__container"></div>
+      </main>
+      <include src="./partials/footer.html"></include>
+    </div>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

@@ -3,7 +3,9 @@ html {
   font-size: 16px;
   color: $color-text;
 }
-
+body {
+  height: 100vh;
+}
 .index__container {
   height: 100%;
   display: flex;
