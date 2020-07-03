@@ -60,6 +60,7 @@
     flex-direction: column;
 
     &--title {
+      cursor: pointer;
       display: flex;
 
       h3 {
@@ -164,6 +165,7 @@
 
     &--title {
       display: flex;
+      cursor: pointer;
       h3 {
         text-transform: uppercase;
         color: $color-text;
@@ -197,7 +199,7 @@
       cursor: pointer;
     }
 
-    input[type="file"] {
+    input[type='file'] {
       position: absolute;
       top: 0;
       left: 10px;
@@ -256,7 +258,7 @@
     &--title {
       padding: 10px 0px;
       display: flex;
-
+      cursor: pointer;
       h3 {
         text-transform: uppercase;
         color: $color-text;
