@@ -1,10 +1,9 @@
 .form {
+  margin-top: 0;
 
+  @include tablet {
     margin-top: 0;
-
-    @include tablet {
-        margin-top: 0;
-    }
+  }
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -67,6 +66,7 @@
 
     &--title {
       display: flex;
+      cursor: pointer;
 
       h3 {
         text-transform: uppercase;
@@ -170,6 +170,7 @@
 
     &--title {
       display: flex;
+      cursor: pointer;
       h3 {
         text-transform: uppercase;
         color: $color-text;
@@ -203,7 +204,7 @@
       cursor: pointer;
     }
 
-    input[type="file"] {
+    input[type='file'] {
       position: absolute;
       top: 0;
       left: 10px;
@@ -216,24 +217,23 @@
       }
     }
 
-      .action__image-preview{
-        display: flex;
-        position:relative;
-      }
-      .action, .profile {
-          display: inline-block;
-      }
-      .profile__preview {
-        border: 1px solid $color-palete1-light;
-        height: 30px;
-        width: 30px;
-        margin-left: 20px;
-        display: inline-block;
-        background-size: cover;
-        background-position: center;
-      }
-
-
+    .action__image-preview {
+      display: flex;
+      position: relative;
+    }
+    .action,
+    .profile {
+      display: inline-block;
+    }
+    .profile__preview {
+      border: 1px solid $color-palete1-light;
+      height: 30px;
+      width: 30px;
+      margin-left: 20px;
+      display: inline-block;
+      background-size: cover;
+      background-position: center;
+    }
   }
 
   input {
@@ -273,6 +273,7 @@
     &--title {
       padding: 10px 0px;
       display: flex;
+      cursor: pointer;
 
       h3 {
         text-transform: uppercase;
@@ -352,15 +353,15 @@
 }
 
 .form .hidden {
-    display: none;
-  }
+  display: none;
+}
 
-  .js-collapsibleChild {
-    animation: growDown .3s ease forwards;
-    transform-origin: top center;
-    opacity: 1;
-    overflow: hidden;
-  };
+.js-collapsibleChild {
+  animation: growDown 0.3s ease forwards;
+  transform-origin: top center;
+  opacity: 1;
+  overflow: hidden;
+}
 
 /**************************
 *   Colores palettes      *
@@ -385,14 +386,14 @@
 
   .card__viewer--social {
     .social--item a {
-    border-color: $color-palete1-light;
-    color: $color-palete1-dark;
+      border-color: $color-palete1-light;
+      color: $color-palete1-dark;
 
-    &:hover {
+      &:hover {
         background-color: $color-palete1-light;
+      }
     }
-        }
-    }
+  }
 }
 
 .js-palette2 {
@@ -414,14 +415,13 @@
 
   .card__viewer--social {
     .social--item a {
-    border-color: $color-palete2-light;
-    color: $color-palete2-dark;
+      border-color: $color-palete2-light;
+      color: $color-palete2-dark;
 
-
-    &:hover {
+      &:hover {
         background-color: $color-palete2-light;
         color: white;
-    }
+      }
     }
   }
 }
@@ -443,13 +443,13 @@
   }
 
   .card__viewer--social {
-      .social--item a{
-    border-color: $color-palete3-light;
-    color: $color-palete3-dark;
+    .social--item a {
+      border-color: $color-palete3-light;
+      color: $color-palete3-dark;
 
-    &:hover {
+      &:hover {
         background-color: $color-palete3-light;
-    }
+      }
     }
   }
 }
@@ -483,14 +483,14 @@
 }
 
 .card__viewer--social {
-    .social--item a{
-  border-color: $color-palete4-light;
-  color: $color-palete4-dark;
+  .social--item a {
+    border-color: $color-palete4-light;
+    color: $color-palete4-dark;
 
-  &:hover {
-    background-color: $color-palete4-light;
-    color: white;
-}
+    &:hover {
+      background-color: $color-palete4-light;
+      color: white;
+    }
   }
 }
 
@@ -506,15 +506,14 @@
   animation: shrinkShare 1s ease forwards;
 }
 
-
 .animate-design {
-    animation: shrinkDesign 1s ease forwards;
+  animation: shrinkDesign 1s ease forwards;
 }
 
 .animate-fill {
-    animation: shrinkFill 1s ease forwards;
+  animation: shrinkFill 1s ease forwards;
 }
 
 .animate-share {
-    animation: shrinkShare 1s ease forwards;
+  animation: shrinkShare 1s ease forwards;
 }
