@@ -12,7 +12,6 @@
     align-self: center;
     margin-top: 30px;
     margin-bottom: 20px;
-    border: solid 1px red;
 
     .carousel__main {
       flex-direction: column;
@@ -73,7 +72,7 @@
     transform: translateY(-50%);
     font-size: 2.1875rem;
     opacity: 60%;
-    border: 1px solid red;
+
     color: $color-palete4-light;
     padding: 10px;
     cursor: pointer;

@@ -45,9 +45,6 @@
     // height: 73.8px;
     border-radius: 4px;
     border: solid 1.6px rgba(027, 142, 006, 0.21);
-    //  rgba(225, 115, 52, 0.21);
-    // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
-
     padding: 15px 20px 17.8px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -63,7 +60,7 @@
     &-icons {
       font-size: 1.4rem;
       font-weight: normal;
-      color: $color-secondary;
+      color: $color-palete4-light;
     }
     &-text {
       font-family: $font-primary;
