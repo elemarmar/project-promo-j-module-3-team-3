@@ -8,28 +8,32 @@
     display: block;
     width: 100%;
     height: 220px;
-    max-width: 1224px;
+    max-width: 700px;
     align-self: center;
     margin-top: 30px;
     margin-bottom: 20px;
+    border: solid 1px red;
 
     .carousel__main {
+      flex-direction: column;
       display: flex;
       padding: 30px 0px;
       margin: 0px 50px;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
 
       .carousel__image--container {
-        height: 150px;
-        width: 150px;
+        height: 100px;
+        width: 100px;
         flex-shrink: 0;
+        border-radius: 50%;
+        overflow: hidden;
 
         .carousel__image {
-          // height: 100%;
-          // width: 100%;
-          border-radius: 50%;
-          margin-left: 5px;
-          object-fit: cover;
+          max-width: 150%;
+          width: 130px;
+          object-position: 50% 50%;
+          object-position: -15px -5px;
         }
       }
       .carousel__text {
@@ -37,11 +41,11 @@
         font-size: 18px;
         display: flex;
         flex-direction: column;
-        padding: 30px 0px;
+        padding: 10px 0px;
 
         .quote {
           text-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.5);
-          margin: 0px 10px;
+          margin: -20px 10px;
           text-align: left;
         }
 
@@ -50,7 +54,7 @@
           font-size: 20px;
           display: inline-block;
           align-self: flex-end;
-          text-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
           margin: 0px 10px;
         }
       }
@@ -59,5 +63,32 @@
 
   .hidden {
     display: none;
+  }
+  // Arrows
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.1875rem;
+    opacity: 60%;
+    border: 1px solid red;
+    color: $color-palete4-light;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
   }
 }
