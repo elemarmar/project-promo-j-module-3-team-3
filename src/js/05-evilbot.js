@@ -59,3 +59,13 @@ const hooverBoot = [
   `¿Se puede saber que demonios haces?`,
   `¡Acabaré contigo y con tu ridículo planeta!`,
 ];
+
+//FLUJO
+
+//greetings al iniciar la página sale aleatoriamente una de las dos frases
+
+//const name blur para que al acabar de escribir se ejecute aleatoriamente la frase
+//BLUR NOS SERVIRÍA PARA TODO?
+//En las palettes, comparte debería ser click
+
+// Al hacer hoover se ejecute una función con frases aleatorias.
