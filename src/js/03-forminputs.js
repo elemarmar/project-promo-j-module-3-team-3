@@ -83,52 +83,56 @@ function paintCard(event) {
 
   // Paint Email
   else if (event.target === inputEmail) {
-    person.email.href = `mailto:${inputEmail.value}`;
-    person.email.classList.remove("hidden");
-    if (inputEmail.value === "") {
-      person.email.classList.add("hidden");
-    }
+      if (inputEmail.value === "" || event.target.checkValidity() === false) {
+        person.email.classList.add("hidden");
+      } else if (event.target.checkValidity() === true) {
+        person.email.href = `mailto:${inputEmail.value}`;
+        person.email.classList.remove("hidden");
+      }
 
     // Paint Phone
   } else if (event.target === inputPhone) {
-    person.phone.href = `tel:${inputPhone.value}`;
-    person.phone.title = inputPhone.value;
-    person.phone.classList.remove("hidden");
-    if (inputPhone.value === "") {
-      person.phone.classList.add("hidden");
+      if (inputPhone.value === "" || event.target.checkValidity() === false) {
+        person.phone.classList.add("hidden");
+
+      } else if (event.target.checkValidity() === true) {
+        person.phone.href = `tel:${inputPhone.value}`;
+        person.phone.title = inputPhone.value;
+        person.phone.classList.remove("hidden");
     }
 
     //Paint linkedin
   } else if (event.target === inputLinkedin) {
-    person.linkedin.href = inputLinkedin.value;
-    person.linkedin.classList.remove("hidden");
-    if (inputLinkedin.value === "") {
-      person.linkedin.classList.add("hidden");
+      if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
+        person.linkedin.classList.add("hidden");
+      } else if (event.target.checkValidity() === true) {
+        person.linkedin.href = `https://www.linkedin.com/in/jlmrtnzmrn/${inputLinkedin.value}`;
+        person.linkedin.classList.remove("hidden");
     }
   } else if (event.target === inputGithub) {
-    person.github.href = inputGithub.value;
-    person.github.classList.remove("hidden");
-    if (inputGithub.value === "") {
-      person.github.classList.add("hidden");
+      if (inputGithub.value === "" || event.target.checkValidity() === false) {
+        person.github.classList.add("hidden");
+      } else if (event.target.checkValidity() === true) {
+        person.github.href = `https://github.com/${inputGithub.value}`;
+        person.github.classList.remove("hidden");
     }
   }
 
   // Enable / Disable create button Add Color to ButtonCard
   if (
-    inputName.value === "" ||
-    inputJob.avlue === "" ||
-    inputEmail.value === "" ||
-    inputPhone.value === ""
+    inputName.value !== "" &&
+    inputJob.avlue !== "" &&
+    inputEmail.value !== "" &&
+    inputPhone.value !== "" &&
+    form.checkValidity() === true
   ) {
-    buttonCard.classList.remove("btn--enable");
-    buttonCard.classList.add("btn--disable");
-    buttonCard.setAttribute("disabled", "");
-    console.log("A");
-  } else {
     buttonCard.classList.remove("btn--disable");
     buttonCard.classList.add("btn--enable");
     buttonCard.removeAttribute("disabled");
-    console.log("B");
+  } else {
+    buttonCard.classList.remove("btn--enable");
+    buttonCard.classList.add("btn--disable");
+    buttonCard.setAttribute("disabled", "");
   }
 }
 

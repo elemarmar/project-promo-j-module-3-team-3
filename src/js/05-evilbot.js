@@ -60,6 +60,10 @@ const hooverBoot = [
   `¡Acabaré contigo y con tu ridículo planeta!`,
 ];
 
+let missingInputs = [];
+// Te falta rellenar: "bla, bla, bla, bla"
+
+
 //FLUJO
 
 //greetings al iniciar la página sale aleatoriamente una de las dos frases

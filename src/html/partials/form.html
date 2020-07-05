@@ -158,26 +158,29 @@
           <input
             class="phone"
             type="tel"
-            placeholder="Ej: 555-55-55-55"
+            placeholder="Ej: 690902412"
             id="phone"
             name="phone"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{9}"
+            required
           />
 
           <label for="linkedin">Linkedin</label>
           <input
             type="text"
-            placeholder="Ej: linkedin.com/in/sally.hill"
+            placeholder="Ej: nombrecool"
             id="linkedin"
             name="linkedin"
+            pattern="[A-Za-z0-9]+"
           />
 
           <label for="github">Github</label>
           <input
             type="text"
-            placeholder="Ej: @sally-hill"
+            placeholder="Ej: @nombrecool"
             id="github"
             name="github"
+            pattern="[A-Za-z0-9-]+"
           />
         </div>
       </div>
