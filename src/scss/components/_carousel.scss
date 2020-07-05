@@ -1,5 +1,6 @@
 .carousel__container {
   display: none;
+  overflow: hidden;
 }
 
 @include tablet {
@@ -17,9 +18,14 @@
       flex-direction: column;
       display: flex;
       padding: 30px 0px;
-      margin: 0px 50px;
+    //   margin: 0px 50px;
       justify-content: center;
       align-items: center;
+      transition: transform 0.8s cubic-bezier(0.5, 0.1, 0.5, 1.25);
+      position: relative;
+      border: 1px solid red;
+    //   max-width: 600px;
+
 
       .carousel__image--container {
         height: 100px;
@@ -91,3 +97,4 @@
     right: 0;
   }
 }
+

@@ -1,6 +1,6 @@
 .form {
   margin-top: 0;
-    @media all and (max-width: 400px) {
+    @media all and (max-width: 500px) {
         height: 400px;
         overflow-y: auto;
     }
@@ -549,4 +549,8 @@ input:valid {
     border-color: rgb(36, 201, 151);
     outline: none;
     position: relative;
+}
+
+.palettes__container label {
+    cursor: pointer;
 }

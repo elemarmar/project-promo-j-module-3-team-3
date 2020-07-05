@@ -1,18 +1,25 @@
 // Evil bot
 .evil-bot__container {
-    position: fixed;
+    position: absolute;
     // border: solid 1px red;
     bottom: 80px;
     right: 0;
     display: flex;
     align-items: center;
     z-index: 10;
-    
+
   
     @media all and (max-width: 768px) {
       // Appear when scroll...
-  
-      bottom: 358px;
+        position: absolute;
+        bottom: 353px;
+        margin: auto;
+    }
+
+    @media all and(max-width: 55px) {
+        position: absolute;
+        bottom: 353px;
+        margin: auto;
     }
   
   }
@@ -27,6 +34,11 @@
       padding: 5px 10px;
       color: rgb(86, 11, 136);
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+
+      @media all and (max-width: 410px) {
+          width: 250px;
+          font-size: 14px;
+      }
 
       &::after {
           content: '';

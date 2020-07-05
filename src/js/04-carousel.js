@@ -8,7 +8,9 @@
 let slideIndex = 1;
 
 function showSlide(n) {
-  let slides = document.querySelectorAll(".js-slide");
+    let slides = document.querySelectorAll(".js-slide");
+    
+
 
   if (n >= slides.length) {
     slideIndex = 0;
@@ -16,13 +18,15 @@ function showSlide(n) {
     slideIndex = slides.length - 1; // Array con 4 items --> última posición: 3
   }
 
+
+    
   // esconder todos
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 
   // mostrar elegido
-  slides[slideIndex].style.display = "flex";
+    slides[slideIndex].style.display = "flex";
 }
 
 // Slide posición 1 se muestra (demás -> hidden)
@@ -44,5 +48,12 @@ prev.addEventListener("click", function () {
 
 // Actualizar index
 function plusSlide(n) {
+  clearInterval(timer);
   showSlide((slideIndex += n));
 }
+
+
+// Automation:
+const timer = setInterval(function () {
+    showSlide(slideIndex += 1);
+}, 3000);

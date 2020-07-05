@@ -5,8 +5,8 @@ const greetings = [
 ];
 
 const name = [
-  `${name}, ¿sabes que he venido a conquistar tu mundo?`,
-  `Encantado, ${name}. Me alegra conocer tu nombre antes de acabar contigo`,
+  `{name}, ¿sabes que he venido a conquistar tu mundo?`,
+  `Encantado, {name}. Me alegra conocer tu nombre antes de acabar contigo`,
 ];
 
 const palettesReaction = [
@@ -22,7 +22,7 @@ const imageReaction = [
 ];
 
 const jobReaction = [
-  `Vaya, como ${job} debes tener buen sueldo ¡Qué pena que vaya a destruir el mundo`,
+  `Vaya, como {job} debes tener buen sueldo ¡Qué pena que vaya a destruir el mundo`,
   `¿Trabajar? Por eso los humanos sois una especie inferior`,
 ];
 
