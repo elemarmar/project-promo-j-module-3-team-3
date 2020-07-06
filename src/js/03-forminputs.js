@@ -106,7 +106,7 @@ function paintCard(event) {
       if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
         person.linkedin.classList.add("hidden");
       } else if (event.target.checkValidity() === true) {
-        person.linkedin.href = `https://www.linkedin.com/in/jlmrtnzmrn/${inputLinkedin.value}`;
+        person.linkedin.href = `https://www.linkedin.com/in/${inputLinkedin.value}`;
         person.linkedin.classList.remove("hidden");
     }
   } else if (event.target === inputGithub) {
@@ -185,3 +185,40 @@ function showCardDone() {
 }
 
 buttonCard.addEventListener("click", showCardDone);
+
+
+/*------------------------------------------------*/
+//                  Crear objeto                  //
+/*------------------------------------------------*/
+
+function createDataObject(){ 
+    const dataObject = {
+        
+        palette: inputName.value,
+        name: inputName.value,
+        job: inputJob.value,
+        email: inputEmail.value,
+        Phone: inputPhone.value,
+        linkedin: inputLinkedin.value,
+        github: inputGithub.value,
+        //photo: input
+    }
+    console.log(dataObject.palette);
+    console.log()
+}
+
+
+
+// input[name="palette"]:checked.value
+
+// {
+//     "palette": 1,
+//     "name": "María García",
+//     "job": "Front-end developer",
+//     "phone": "+34 666666666",
+//     "email": "mariagar@example.com",
+//     "linkedin": "mariagar",
+//     "github": "mariagar",
+//     "photo": "data:image/png;base64,2342ba..."
+//   }
+
