@@ -37,15 +37,19 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
 // Next: +1
+
+if (next) {
 next.addEventListener("click", function () {
   plusSlide(1);
 });
+}
 
 // Prev: -1
-prev.addEventListener("click", function () {
+if (prev) {
+  prev.addEventListener("click", function () {
   plusSlide(-1);
 });
-
+}
 // Actualizar index
 function plusSlide(n) {
   clearInterval(timer);
@@ -54,6 +58,8 @@ function plusSlide(n) {
 
 
 // Automation:
-const timer = setInterval(function () {
-    showSlide(slideIndex += 1);
-}, 3000);
+if (prev) {
+    const timer = setInterval(function () {
+        showSlide(slideIndex += 1);
+    }, 3000);
+}

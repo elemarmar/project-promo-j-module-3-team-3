@@ -36,6 +36,7 @@ function changeColors(event) {
   setTimeout(function () {
     background.classList.remove("run-animation");
   }, 1000);
+
 }
 for (const palette of palettes) {
   palette.addEventListener("change", changeColors);
@@ -136,7 +137,13 @@ function paintCard(event) {
   }
 }
 
-form.addEventListener("keyup", paintCard);
+form.addEventListener("keyup", handleForm);
+function handleForm(){
+  paintCard(event);
+  storeObject();
+}
+
+
 
 // Resetear el formulario
 const buttonReset = document.querySelector(".btn--reset");
@@ -176,49 +183,118 @@ buttonReset.addEventListener("click", resetForm);
 
 //BUTTON CREAR TARJETA
 
+let dataObject = {};
+let linkTwitter;
+
+
+
+function createCardObject () {
+  showCardDone();
+    createDataObject();
+    console.log(dataObject);
+    sendRequest(dataObject);
+
+
+}
+
 function showCardDone() {
   if (!buttonCard.hasAttribute("disable")) {
     cardDone.classList.remove("hidden");
     buttonCard.classList.add("btn--disable");
-    buttonCard.setAttribute("disabled");
+    buttonCard.setAttribute("disabled", "");
   }
 }
 
-buttonCard.addEventListener("click", showCardDone);
+buttonCard.addEventListener("click", createCardObject);
 
 
 /*------------------------------------------------*/
 //                  Crear objeto                  //
 /*------------------------------------------------*/
+let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
 
-function createDataObject(){ 
-    const dataObject = {
-        
-        palette: inputName.value,
+function createDataObject() {
+    dataObject = {
+        palette: checkedPalette,
         name: inputName.value,
         job: inputJob.value,
         email: inputEmail.value,
-        Phone: inputPhone.value,
+        phone: inputPhone.value,
         linkedin: inputLinkedin.value,
         github: inputGithub.value,
-        //photo: input
+        photo: fr.result
     }
-    console.log(dataObject.palette);
-    console.log()
+}
+
+// Mandar request
+function sendRequest(json){
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(json),
+      headers: {
+        'content-type': 'application/json'
+      },
+    })
+      .then(function(resp) { return resp.json(); })
+      .then(function(result) { showURL(result); })
+      .catch(function(error) { console.log(error); });
+}
+
+// Mostrar URL
+const linkCard = document.querySelector('.link__card');
+
+function showURL(result){
+  if (result.success) {
+      linkTwitter = result.cardURL;
+      twitterShare(linkTwitter);
+      console.log(linkTwitter);
+  linkCard.innerHTML = '<a href=' + result.cardURL + ' target="_blank">' + result.cardURL + '</a>';
+}else{
+  linkCard.innerHTML = 'Muahaha ¡otro error humano!' + result.error;
+}
+}
+
+  function twitterShare(urlCard) {
+    const twitterURL = document.querySelector('.button__twitter');
+      twitterURL.href = `http://twitter.com/share?text=Aquí tienes mi Maniac coder's Awesome Profile Cards🖥️&hashtags=adalaber,promoJemison&user_mentions=Adalab_Digital&url=${urlCard}`;
+  }
+  
+ 
+
+function storeObject() {
+    createDataObject();
+    localStorage.setItem('userData', JSON.stringify(dataObject));
+};
+
+
+// al arrancar la página
+function getFromLocalStorage() {
+    const userDataRaw = localStorage.getItem('userData');
+    const userData = JSON.parse(userDataRaw);
+    if (userData !== null) {
+        checkedPalette = userData.palette;
+        console.log(checkedPalette);
+
+        inputName.value = userData.name;
+        person.name.innerHTML = userData.name;
+
+        inputJob.value = userData.job;
+        person.job.innerHTML = userData.job;
+
+        inputEmail.value = userData.email;
+        person.email.innerHTML = userData.email;
+        
+        inputPhone.value = userData.phone;
+        person.phone.innerHTML = userData.phone;
+
+        inputLinkedin.value = userData.linkedin;
+        person.linkedin.innerHTML = userData.linkedin;
+
+        inputGithub.value = userData.github;
+        person.github.innerHTML = userData.github;
+    }
 }
 
 
 
-// input[name="palette"]:checked.value
-
-// {
-//     "palette": 1,
-//     "name": "María García",
-//     "job": "Front-end developer",
-//     "phone": "+34 666666666",
-//     "email": "mariagar@example.com",
-//     "linkedin": "mariagar",
-//     "github": "mariagar",
-//     "photo": "data:image/png;base64,2342ba..."
-//   }
-
+getFromLocalStorage();
