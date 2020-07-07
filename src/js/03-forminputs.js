@@ -36,10 +36,18 @@ function changeColors(event) {
   setTimeout(function () {
     background.classList.remove("run-animation");
   }, 1000);
+  for (const palette of palettes) {
+    if (palette.checked) {
+        checkedPalette = palette.value;
+    }
+  }
+    storeObject();
 
 }
+
+let checkedPalette;
 for (const palette of palettes) {
-  palette.addEventListener("change", changeColors);
+    palette.addEventListener("change", changeColors);
 }
 
 /***********************************
@@ -211,7 +219,7 @@ buttonCard.addEventListener("click", createCardObject);
 /*------------------------------------------------*/
 //                  Crear objeto                  //
 /*------------------------------------------------*/
-let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
+// let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
 
 function createDataObject() {
     dataObject = {
