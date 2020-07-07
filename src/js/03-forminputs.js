@@ -13,24 +13,16 @@ function changeColors(event) {
   background.classList.add("run-animation");
   if (event.target === palettes[0]) {
     card.classList.add("js-palette1");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette3");
-    card.classList.remove("js-palette4");
+    card.classList.remove("js-palette2", "js-palette3", "js-palette4");
   } else if (event.target === palettes[1]) {
-    card.classList.remove("js-palette3");
+    card.classList.remove("js-palette3", "js-palette1", "js-palette4");
     card.classList.add("js-palette2");
-    card.classList.remove("js-palette1");
-    card.classList.remove("js-palette4");
   } else if (event.target === palettes[2]) {
     card.classList.add("js-palette3");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette1");
-    card.classList.remove("js-palette4");
+    card.classList.remove("js-palette2", "js-palette1", "js-palette4");
   } else if (event.target === palettes[3]) {
     card.classList.add("js-palette4");
-    card.classList.remove("js-palette3");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette1");
+    card.classList.remove("js-palette3", "js-palette2", "js-palette1");
   }
 
   setTimeout(function () {
@@ -280,8 +272,14 @@ function getFromLocalStorage() {
     const userDataRaw = localStorage.getItem('userData');
     const userData = JSON.parse(userDataRaw);
     if (userData !== null) {
-        checkedPalette = userData.palette;
-        console.log(checkedPalette);
+        for (let i = 0; i < palettes.length; i++) {
+            if (palettes[i].value === userData.palette) {
+                palettes[i].checked = true;
+                card.className = "card__viewer";
+                card.classList.add(`js-palette${parseInt(i) + parseInt(1)}`);
+                console.log("done: " + card.classList);
+            }
+        }
 
         inputName.value = userData.name;
         person.name.innerHTML = userData.name;

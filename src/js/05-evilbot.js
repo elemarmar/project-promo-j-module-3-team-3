@@ -63,6 +63,8 @@ const hooverBoot = [
 let missingInputs = [];
 // Te falta rellenar: "bla, bla, bla, bla"
 
+// Función que genera números aleatorios hasta el que le digamos
+
 
 //FLUJO
 

@@ -2,7 +2,7 @@
 .evil-bot__container {
     position: absolute;
     // border: solid 1px red;
-    bottom: 80px;
+    top: 780px;
     right: 0;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
     @media all and (max-width: 768px) {
       // Appear when scroll...
         position: absolute;
-        bottom: 353px;
+        top: 520px;
         margin: auto;
     }
 
