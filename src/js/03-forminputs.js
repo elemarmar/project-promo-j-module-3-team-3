@@ -4,6 +4,7 @@ const form = document.querySelector(".form");
 const card = document.querySelector(".card__viewer");
 const background = document.querySelector(".card-background");
 const cardDone = document.querySelector(".js-carddone");
+let checkedPalette;
 /***********************************
 *        PALETAS A TARJETA        *
 **********************************/
@@ -33,10 +34,12 @@ function changeColors(event) {
       checkedPalette = palette.value;
     }
   }
-  storeObject();
+    checkPalette();
+    checkFormValidity();
+    storeObject();
 }
 
-let checkedPalette;
+
 for (const palette of palettes) {
   palette.addEventListener("change", changeColors);
 }
@@ -73,81 +76,54 @@ const buttonCard = document.querySelector(".button__card");
 const socialIcons = document.querySelectorAll(".social-info");
 
 function paintCard(event) {
-  // Paint Name and job
-  if (event.target === inputName) {
-    person.name.innerHTML =
-    inputName.value !== "" ? inputName.value : defaultPerson.name;
-  } else if (event.target === inputJob) {
-    person.job.innerHTML =
-    inputJob.value !== "" ? inputJob.value : defaultPerson.job;
-  }
-  
-  // Paint Email
-  else if (event.target === inputEmail) {
-    if (inputEmail.value === "" || event.target.checkValidity() === false) {
-      person.email.classList.add("hidden");
-    } else if (event.target.checkValidity() === true) {
-      person.email.href = `mailto:${inputEmail.value}`;
-      person.email.classList.remove("hidden");
+    // Paint Name and job
+    if (event.target === inputName) {
+        person.name.innerHTML =
+            inputName.value !== "" ? inputName.value : defaultPerson.name;
+    } else if (event.target === inputJob) {
+        person.job.innerHTML =
+            inputJob.value !== "" ? inputJob.value : defaultPerson.job;
     }
+  
+    // Paint Email
+    else if (event.target === inputEmail) {
+        if (inputEmail.value === "" || event.target.checkValidity() === false) {
+            person.email.classList.add("hidden");
+        } else if (event.target.checkValidity() === true) {
+            person.email.href = `mailto:${inputEmail.value}`;
+            person.email.classList.remove("hidden");
+        }
     
-    // Paint Phone
-  } else if (event.target === inputPhone) {
-    if (inputPhone.value === "" || event.target.checkValidity() === false) {
-      person.phone.classList.add("hidden");
+        // Paint Phone
+    } else if (event.target === inputPhone) {
+        if (inputPhone.value === "" || event.target.checkValidity() === false) {
+            person.phone.classList.add("hidden");
       
-    } else if (event.target.checkValidity() === true) {
-      person.phone.href = `tel:${inputPhone.value}`;
-      person.phone.title = inputPhone.value;
-      person.phone.classList.remove("hidden");
-    }
+        } else if (event.target.checkValidity() === true) {
+            person.phone.href = `tel:${inputPhone.value}`;
+            person.phone.title = inputPhone.value;
+            person.phone.classList.remove("hidden");
+        }
     
-    //Paint linkedin
-  } else if (event.target === inputLinkedin) {
-    if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
-      person.linkedin.classList.add("hidden");
-    } else if (event.target.checkValidity() === true) {
-      person.linkedin.href = `https://www.linkedin.com/in/${inputLinkedin.value}`;
-      person.linkedin.classList.remove("hidden");
+        //Paint linkedin
+    } else if (event.target === inputLinkedin) {
+        if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
+            person.linkedin.classList.add("hidden");
+        } else if (event.target.checkValidity() === true) {
+            person.linkedin.href = `https://www.linkedin.com/in/${inputLinkedin.value}`;
+            person.linkedin.classList.remove("hidden");
+        }
+    } else if (event.target === inputGithub) {
+        if (inputGithub.value === "" || event.target.checkValidity() === false) {
+            person.github.classList.add("hidden");
+        } else if (event.target.checkValidity() === true) {
+            person.github.href = `https://github.com/${inputGithub.value}`;
+            person.github.classList.remove("hidden");
+        }
     }
-  } else if (event.target === inputGithub) {
-    if (inputGithub.value === "" || event.target.checkValidity() === false) {
-      person.github.classList.add("hidden");
-    } else if (event.target.checkValidity() === true) {
-      person.github.href = `https://github.com/${inputGithub.value}`;
-      person.github.classList.remove("hidden");
-    }
-  }
-  
-  // Enable / Disable create button Add Color to ButtonCard
-  if (
-    inputName.value !== "" &&
-    inputJob.avlue !== "" &&
-    inputEmail.value !== "" &&
-    inputPhone.value !== "" &&
-    form.checkValidity() === true
-    ) {
-      buttonCard.classList.remove("btn--disable");
-      buttonCard.classList.add("btn--enable");
-      buttonCard.removeAttribute("disabled");
-    } else {
-      buttonCard.classList.remove("btn--enable");
-      buttonCard.classList.add("btn--disable");
-      buttonCard.setAttribute("disabled", "");
-    }
-  }
-  
-  if (form) {
-    form.addEventListener("keyup", handleForm);
-     function handleForm(){
-      paintCard(event);
-      storeObject();
-    }
-  }
-  
-  
-  
-  
+    checkFormValidity()
+}
+
   
   // Resetear el formulario
   const buttonReset = document.querySelector(".btn--reset");
@@ -204,7 +180,6 @@ if (buttonReset) {
   function createCardObject () {
     showCardDone();
     createDataObject();
-    console.log(dataObject);
     sendRequest(dataObject);
     
     
@@ -238,7 +213,7 @@ if (buttonCard){
       phone: inputPhone.value,
       linkedin: inputLinkedin.value,
       github: inputGithub.value,
-      photo: fr.result
+        photo:  fr.result || JSON.parse(localStorage.getItem("userData")).photo
     }
   }
   
@@ -263,7 +238,6 @@ function showURL(result){
   if (result.success) {
     linkTwitter = result.cardURL;
     twitterShare(linkTwitter);
-    console.log(linkTwitter);
     linkCard.innerHTML = '<a href=' + result.cardURL + ' target="_blank">' + result.cardURL + '</a>';
   }else{
     linkCard.innerHTML = 'Muahaha ¡otro error humano!' + result.error;
@@ -280,7 +254,7 @@ function twitterShare(urlCard) {
 function storeObject() {
   createDataObject();
   localStorage.setItem('userData', JSON.stringify(dataObject));
-};
+}
 
 
 // al arrancar la página
@@ -313,7 +287,8 @@ function getFromLocalStorage() {
     
         inputGithub.value = userData.github;
         person.github.href = userData.github;
-
+        
+        person.photo.style.backgroundImage = `url(${userData.photo})`;
 
 
         // Paint Email
@@ -330,6 +305,7 @@ function getFromLocalStorage() {
             person.github.classList.remove("hidden");
         }
     }
+    checkFormValidity()
 }
 
 
@@ -339,3 +315,47 @@ if (form) {
 
 
 
+/*******************************
+ *      CARD DONE!             *
+ ******************************/
+
+   // Enable / Disable create button Add Color to ButtonCard
+
+function checkFormValidity() {
+        if (
+            inputName.value !== "" &&
+            inputJob.avlue !== "" &&
+            inputEmail.value !== "" &&
+            inputPhone.value !== "" &&
+            form.checkValidity() === true
+        ) {
+              buttonCard.classList.remove("btn--disable");
+              buttonCard.classList.add("btn--enable");
+              buttonCard.removeAttribute("disabled");
+            } else {
+              buttonCard.classList.remove("btn--enable");
+              buttonCard.classList.add("btn--disable");
+              buttonCard.setAttribute("disabled", "");
+            }
+          
+          
+    
+        }
+    
+    if (form) {
+        form.addEventListener("keyup", handleForm);
+        function handleForm() {
+            paintCard(event);
+            storeObject();
+        }
+    }
+
+
+
+function checkPalette() {
+    for (const palette of palettes) {
+        if (palette.checked) {
+          checkedPalette = palette.value;
+        }
+      }
+    }

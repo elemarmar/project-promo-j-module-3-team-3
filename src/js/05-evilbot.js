@@ -85,30 +85,30 @@ form.addEventListener('keyup', function () {
 
 
 function updateMessages() {
-/*~~~~~~~~~  Greetings  ~~~~~~~~*/
+    /*~~~~~~~~~  Greetings  ~~~~~~~~*/
 
   
-  /*~~~~~~~~~  Name  ~~~~~~~~*/
-  const name = [
-    `${inputName.value}, ¿sabes que he venido a conquistar tu mundo?`,
-    `Encantado, ${inputName.value}, me alegra conocer tu nombre antes de acabar contigo`,
-  ];
+    /*~~~~~~~~~  Name  ~~~~~~~~*/
+    const name = [
+        `<b>${inputName.value}</b>, ¿sabes que he venido a conquistar tu mundo?`,
+        `Encantado, <b>${inputName.value}</b>, me alegra conocer tu nombre antes de acabar contigo`,
+    ];
     // Reacción a name
     inputName.addEventListener('blur', function () {
-    evilTalk(name, 4000);
-});
+        evilTalk(name, 4000);
+    });
   
   
-  /*~~~~~~~~~  Job  ~~~~~~~~*/
-  const jobReaction = [
-    `Vaya, como ${inputJob.value} debes tener buen sueldo ¡Qué pena que vaya a destruir el mundo`,
-    `¿Trabajar? Por eso los humanos sois una especie inferior`,
-  ];
+    /*~~~~~~~~~  Job  ~~~~~~~~*/
+    const jobReaction = [
+        `Vaya, como <b>${inputJob.value}</b> debes tener buen sueldo ¡Qué pena que vaya a destruir el mundo`,
+        `¿Trabajar? Por eso los humanos sois una especie inferior`,
+    ];
     // Reacción a job
-inputJob.addEventListener('blur', function () {
-    evilTalk(jobReaction, 4000);
-});
-  
+    inputJob.addEventListener('blur', function () {
+        evilTalk(jobReaction, 4000);
+    });
+}
 
   
   /*~~~~~~~~~  Missing inputs  ~~~~~~~~*/
@@ -116,10 +116,7 @@ inputJob.addEventListener('blur', function () {
   // Te falta rellenar: "bla, bla, bla, bla"
   
   
-  /*~~~~~~~~~  LocalStorage  ~~~~~~~~*/
-  // Reacción si hay localStorage: algo tipo me acuerdo de ti, o algo así
-  
-}
+
 
 
 //FLUJO
@@ -175,8 +172,24 @@ function evilTalk(text, seconds) {
  *                  LLAMADAS
  */
 
+      /*~~~~~~~~~  LocalStorage  ~~~~~~~~*/
+  // Reacción si hay localStorage: algo tipo me acuerdo de ti, o algo así
+    if (JSON.parse(localStorage.getItem('userData')).name) {
+        evilTalk(greetings, 5000);
+        const name = JSON.parse(localStorage.getItem('userData')).name;
+        const localStorageReaction = [
+            `Vaya, vaya <b>${name}</b> con que de vuelta, ¿eh?`,
+            `Parece que no has tenido un buen día, <b>${name}</b>, se te ven las ojeras.`,
+            `¿Otra vez aquí, <b>${name}</b>? ¿Es que no tienes amigos? Ha, ha, ha.`
+        ];
+        evilTalk(localStorageReaction, 5000);
+    } else {
+      
 // Saludo nada más cargar la página
-evilTalk(greetings, 4000);
+    evilTalk(greetings, 4000);
+    }
+
+
 
 // Reacción a hacer hover sobre el tentáculo
 evilBot.addEventListener('mouseover', function () {
@@ -208,10 +221,3 @@ buttonReset.addEventListener('click', function () {
         `Tienes una belleza muy particular`,
         `Bueno, si no tienes otra mejor...`,
     ];
-      
-    // if(profileImage.g)
-    //         // Reacción a name
-    //         uploadBtn.addEventListener('click', function () {
-    //             evilTalk(imageReaction, 4000);
-    //             console.log("HI");
-    //         });
