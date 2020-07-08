@@ -30,7 +30,7 @@
       align-items: center;
       justify-content: center;
       background-color: rgba(115, 60, 187, 0.3);
-      height: 60px;
+      min-height: 60px;
       max-width: 300px;
       border-radius: 6px;
       position: relative;
@@ -65,6 +65,9 @@
     background-size: 50px;
     background-position: center;
     background-repeat: no-repeat;
+    &:hover {
+        cursor: help;
+    }
 
 
 

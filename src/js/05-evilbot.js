@@ -15,14 +15,14 @@ const greetings = [
   `Diría que me alegro de verte, pero mentiría`,
     `Hoy es un gran día para conquistar el mundo`,
     `Hdsfadsfadsgfdghfsdhgfhgfdh`,
-    `Hoy es un dpojf 9w8qyfj23woifjh efij`,
+    `HOLA.`,
    `EXAMEEEEEN!!!`
 ];
 
 /*~~~~~~~~~  Name  ~~~~~~~~*/
 const name = [
-  `{name}, ¿sabes que he venido a conquistar tu mundo?`,
-  `Encantado, {name}. Me alegra conocer tu nombre antes de acabar contigo`,
+  `${inputName.value}, ¿sabes que he venido a conquistar tu mundo?`,
+  `Encantado, ${inputName.value}, me alegra conocer tu nombre antes de acabar contigo`,
 ];
 
 /*~~~~~~~~~  Palettes  ~~~~~~~~*/
@@ -141,7 +141,7 @@ function evilTalk(text, seconds) {
     evilContainer.classList.add('fadeout');
     evilContainer.classList.remove('fadein');
     evilBot.classList.remove('talk');
-  }, 3000);
+  }, seconds);
 }
 
 
@@ -153,10 +153,27 @@ function evilTalk(text, seconds) {
  */
 
 // Saludo nada más cargar la página
-evilTalk(greetings);
+evilTalk(greetings, 4000);
 
 // Reacción a hacer hover sobre el tentáculo
 evilBot.addEventListener('mouseover', function () {
-    evilTalk(hooverBoot);
-})
+    evilTalk(hooverBoot, 4000);
+});
 
+
+// Reacción a reset
+buttonReset.addEventListener('click', function () {
+    evilTalk(reset, 4000);
+});
+
+// Reacción a paletas
+
+// Reacción a name
+inputName.addEventListener('blur', function () {
+    evilTalk(name, 4000);
+});
+
+// Reacción a job
+inputJob.addEventListener('blur', function () {
+    evilTalk(jobReaction, 4000);
+});
