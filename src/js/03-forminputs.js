@@ -51,6 +51,7 @@ const person = {
   phone: document.querySelector(".js-mobile"),
   linkedin: document.querySelector(".js-linkedin"),
   github: document.querySelector(".js-github"),
+  photo: document.querySelector(".card--img"),
 };
 
 const defaultPerson = {
@@ -153,8 +154,11 @@ function paintCard(event) {
   
   function resetForm() {
     document.querySelector(".form").reset();
-    person.name.innerHTML = "Nombre Apellido";
-    person.job.innerHTML = "Front-end developer";
+    person.name.innerHTML = defaultPerson.name;
+    person.job.innerHTML = defaultPerson.job;
+    person.photo.style.backgroundImage = "url('./assets/images/imagen-prueba.jpg')";
+    profilePreview.style.backgroundImage= "none";
+
     
     if (person.phone.classList.contains(".hidden") === false) {
       person.phone.classList.add("hidden");
@@ -177,9 +181,12 @@ function paintCard(event) {
     person.github.href = "";
     
     card.classList.add("js-palette1");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette3");
-    card.classList.remove("js-palette4");
+    card.classList.remove("js-palette2", "js-palette3", "js-palette4");
+      
+  
+
+
+      
   }
   
 if (buttonReset) {

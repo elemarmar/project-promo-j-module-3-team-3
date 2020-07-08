@@ -1,13 +1,30 @@
 //Frases
 const greetings = [
   `Diría que me alegro de verte, pero mentiría`,
-  `Hoy es un gran día para conquistar el mundo`,
+    `Hoy es un gran día para conquistar el mundo`,
+    `Hdsfadsfadsgfdghfsdhgfhgfdh`,
+    `Hoy es un dpojf 9w8qyfj23woifjh efij`,
+   `EXAMEEEEEN!!!`
 ];
+
+function randomN(max) {
+   return Math.floor(Math.random() * max) 
+}
+
+let evilChat = document.querySelector(".evil-chat");
+
+// random number: 0
+
+evilChat.innerHTML= greetings[randomN(greetings.length)];
+
+
+
 
 const name = [
   `{name}, ¿sabes que he venido a conquistar tu mundo?`,
   `Encantado, {name}. Me alegra conocer tu nombre antes de acabar contigo`,
 ];
+
 
 const palettesReaction = [
   `¡Qué color más absurdo!`,
