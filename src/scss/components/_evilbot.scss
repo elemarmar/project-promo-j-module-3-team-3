@@ -66,10 +66,34 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &:hover {
-        background-image: url("../images/stop.png");
-        background-size: contain;
-        background-position: center;
-    }
+
+
     // border: solid 1px red;
   }
+
+  .fadeout {
+      animation: fadeout 2s ease forwards;
+  }
+
+  .fadein {
+      animation: fadein 2s ease forwards;
+  }
+
+  @keyframes fadeout {
+      from { opacity: 1}
+      to {opacity: 0}
+  }
+
+  @keyframes fadein {
+    from { opacity: 0}
+    to {opacity: 1}
+}
+
+.talk {
+    background-image: url("../images/stop.png") !important;
+    background-size: contain;
+}
+
+.stop {
+    background-image: url("../images/notalk.png");
+}
