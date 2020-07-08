@@ -58,8 +58,10 @@ function plusSlide(n) {
 
 
 // Automation:
-if (prev) {
-    const timer = setInterval(function () {
+
+let timer;
+if(prev) {
+     timer = setInterval(function () {
         showSlide(slideIndex += 1);
     }, 3000);
 }

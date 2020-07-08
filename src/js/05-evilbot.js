@@ -65,6 +65,8 @@ let missingInputs = [];
 
 // Función que genera números aleatorios hasta el que le digamos
 
+// Reacción si hay localStorage: algo tipo me acuerdo de ti, o algo así
+
 
 //FLUJO
 
