@@ -63,5 +63,5 @@ let timer;
 if(prev) {
      timer = setInterval(function () {
         showSlide(slideIndex += 1);
-    }, 3000);
+    }, 4000);
 }

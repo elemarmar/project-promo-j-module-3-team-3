@@ -25,15 +25,20 @@
   }
   
 
-  .evil-chat {
+  .evil-chat__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: rgba(115, 60, 187, 0.3);
       height: 60px;
-      width: 300px;
+      max-width: 300px;
       border-radius: 6px;
       position: relative;
-      padding: 5px 10px;
+      padding: 5px 20px;
       color: rgb(86, 11, 136);
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+
+      text-align: center;
 
       @media all and (max-width: 410px) {
           width: 250px;
@@ -50,6 +55,7 @@
           transform: translateY(-50%) rotate(45deg);
           background-image: linear-gradient(-130deg, rgba(115, 60, 187,.3) 50%,rgba(0,0,0,0) 50%);
       }
+
   }
 
   .evil-bot {

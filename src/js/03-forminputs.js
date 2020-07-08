@@ -285,35 +285,51 @@ function storeObject() {
 
 // al arrancar la página
 function getFromLocalStorage() {
-  const userDataRaw = localStorage.getItem('userData');
-  const userData = JSON.parse(userDataRaw);
-  if (userData !== null) {
-    for (let i = 0; i < palettes.length; i++) {
-      if (palettes[i].value === userData.palette) {
-        palettes[i].checked = true;
-        card.className = "card__viewer";
-        card.classList.add(`js-palette${parseInt(i) + parseInt(1)}`);
-      }
+    const userDataRaw = localStorage.getItem('userData');
+    const userData = JSON.parse(userDataRaw);
+    if (userData !== null) {
+        for (let i = 0; i < palettes.length; i++) {
+            if (palettes[i].value === userData.palette) {
+                palettes[i].checked = true;
+                card.className = "card__viewer";
+                card.classList.add(`js-palette${parseInt(i) + parseInt(1)}`);
+            }
+        }
+    
+        inputName.value = userData.name;
+        person.name.innerHTML = inputName.value ? userData.name : defaultPerson.name;
+    
+        inputJob.value = userData.job;
+        person.job.innerHTML = inputJob.value ? userData.job : defaultPerson.job;
+    
+        inputEmail.value = userData.email;
+        person.email.href = userData.email;
+    
+        inputPhone.value = userData.phone;
+        person.phone.href = userData.phone;
+    
+        inputLinkedin.value = userData.linkedin;
+        person.linkedin.href = userData.linkedin;
+    
+        inputGithub.value = userData.github;
+        person.github.href = userData.github;
+
+
+
+        // Paint Email
+        if (inputEmail.value !== "") {
+            person.email.classList.remove("hidden");
+        }
+        if (inputPhone.value !== "") {
+            person.phone.classList.remove("hidden");
+        }
+        if (inputLinkedin.value !== "") {
+            person.linkedin.classList.remove("hidden");
+        }
+        if (inputGithub.value !== "") {
+            person.github.classList.remove("hidden");
+        }
     }
-    
-    inputName.value = userData.name;
-    person.name.innerHTML = inputName.value ? userData.name : defaultPerson.name;
-    
-    inputJob.value = userData.job;
-    person.job.innerHTML = inputJob.value ? userData.job : defaultPerson.job;
-    
-    inputEmail.value = userData.email;
-    person.email.innerHTML = userData.email;
-    
-    inputPhone.value = userData.phone;
-    person.phone.innerHTML = userData.phone;
-    
-    inputLinkedin.value = userData.linkedin;
-    person.linkedin.innerHTML = userData.linkedin;
-    
-    inputGithub.value = userData.github;
-    person.github.innerHTML = userData.github;
-  }
 }
 
 
