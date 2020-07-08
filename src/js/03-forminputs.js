@@ -159,7 +159,8 @@ function paintCard(event) {
     card.classList.add("js-palette1");
     card.classList.remove("js-palette2", "js-palette3", "js-palette4");
       
-  
+      checkFormValidity();
+      storeObject();
 
 
       
