@@ -22,7 +22,6 @@
                   type="radio"
                   class="palette"
                   id="palette1"
-                  checked="checked"
                   value="1"
                   name="palette"
                   required />
@@ -96,7 +95,7 @@
           <label for="name">Nombre completo</label>
           <input
             type="text"
-            placeholder="Ej: Sally Jill"
+            placeholder="Ej: Tentáculo Morado"
             id="name"
             name="name"
             required
@@ -127,6 +126,7 @@
                 name=""
                 id="img-selector"
                 class="action__hiddenField js__profile-upload-btn"
+                required
               />
             </div>
             <div class="profile">
@@ -147,7 +147,7 @@
           <input
             class="email"
             type="email"
-            placeholder="Ej: sally-hill@gmail.com"
+            placeholder="Ej: tentaculo@morado.com"
             id="email"
             name="email"
             pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
@@ -158,26 +158,30 @@
           <input
             class="phone"
             type="tel"
-            placeholder="Ej: 555-55-55-55"
+            placeholder="Ej: 690902412"
             id="phone"
             name="phone"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{9}"
           />
 
           <label for="linkedin">Linkedin</label>
           <input
             type="text"
-            placeholder="Ej: linkedin.com/in/sally.hill"
+            placeholder="Ej: nombrecool"
             id="linkedin"
             name="linkedin"
+            pattern="[A-Za-z0-9]+"
+            required
           />
 
           <label for="github">Github</label>
           <input
             type="text"
-            placeholder="Ej: @sally-hill"
+            placeholder="Ej: @nombrecool"
             id="github"
             name="github"
+            pattern="[A-Za-z0-9-]+"
+            required
           />
         </div>
       </div>
@@ -208,10 +212,10 @@
     </div>
     <div class="carddone js-carddone hidden">
       <h3>La tarjeta ha sido creada</h3>
-      <a class="link__card" href="" title="Enlace de la tarjeta"
+      <a class="link__card" href="" title="Enlace de la tarjeta" 
         >http://www.loquesea.com</a
       >
-      <a class="button__twitter" href="" title="Compartir en Twitter"
+      <a class="button__twitter" href="" title="Compartir en Twitter" target="_blank"
         ><i class="twitter-icon fab fa-twitter"></i>Compartir en twitter
       </a>
     </div>
