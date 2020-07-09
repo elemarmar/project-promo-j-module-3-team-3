@@ -2,22 +2,29 @@
   background-color: $color-background;
   text-align: center;
   flex-grow: 1;
+  display: flex;
+  @include tablet {
+    border-bottom: 1px solid $color-border;
+  }
+
 }
 .main {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
+  padding-top: 50px;
 
   &__title {
     width: 250px;
-    height: 63px;
+    height: 62px;
     margin-bottom: 60px;
+
     &-img {
       width: 100%;
     }
@@ -42,9 +49,6 @@
     // height: 73.8px;
     border-radius: 4px;
     border: solid 1.6px rgba(027, 142, 006, 0.21);
-    //  rgba(225, 115, 52, 0.21);
-    // Si le aplico el color que le corresponde más un opacity, lo que ocurre es que todo el el elemento se convierte a opaco. He estado leyendo y lo que se recomienda es pasar el color a rgba y ponerle la opacidad (en este caso: 0.21)
-
     padding: 15px 20px 17.8px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -60,7 +64,7 @@
     &-icons {
       font-size: 1.4rem;
       font-weight: normal;
-      color: $color-secondary;
+      color: $color-palete4-light;
     }
     &-text {
       font-family: $font-primary;
@@ -88,7 +92,7 @@
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 38.6px;
+    margin-top: 38px;
     padding: 10px 20px;
     transition: all 0.5s ease;
 
@@ -102,7 +106,7 @@
 @include tablet {
   .main {
     // height: 963px;
-    padding: 100px 0 60px;
+    padding: 70px 0 50px;
     justify-content: flex-end;
 
     &__title {
@@ -138,7 +142,7 @@
       }
     }
     &__button {
-      margin-top: 186px;
+      margin-top: 35px;
     }
   }
 }

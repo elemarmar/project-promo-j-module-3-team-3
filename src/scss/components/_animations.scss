@@ -43,42 +43,105 @@
 
 /*----------------*/
 
-// Animaciones colapsables
-@keyframes shrinkFill {
-  0% {
-    opacity: 1;
-    height: 580px;
-  }
 
-  100% {
-    opacity: 0.3;
-    height: 0;
-    padding: 0;
-  }
+
+@keyframes shrinkUp {
+    0% {
+        transform: scaleY(1);
+        visibility: visible;
+        height: 100px;
+        // height: 100%;
+
+    }
+
+    100% {
+        transform: translateY(-100%);
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        height: 0;
+
+    }
+}
+@keyframes growFill {
+    0% {
+        opacity: 0.3;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 580px;
+    }
+}
+
+
+@keyframes shrinkFill {
+    0% {
+        opacity: 1;
+        height: 580px;
+    }
+
+    100% {
+        opacity: 0.3;
+        height: 0;
+        padding: 0;
+
+    }
 }
 
 @keyframes shrinkShare {
-  0% {
-    opacity: 1;
-    height: 110px;
-  }
+    0% {
+        opacity: 1;
+        height: 110px;
+    }
 
-  100% {
-    opacity: 0.3;
-    height: 0;
-    padding: 0;
-  }
+    100% {
+        opacity: 0.3;
+        height: 0;
+        padding: 0;
+
+    }
+}
+@keyframes growShare {
+    0% {
+        opacity: .3;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: 110px;
+        padding: 0;
+    }
 }
 
 @keyframes shrinkDesign {
-  0% {
-    opacity: 1;
-    height: 239px;
-  }
+    0% {
+        opacity: 1;
+        height: 239px;
+    }
 
-  100% {
-    opacity: 0.7;
-    height: 0;
-    padding: 0;
-  }
+    100% {
+        opacity: 0.7;
+        height: 0;
+        padding: 0;
+    }
+}
+@keyframes growDesign {
+    0% {
+        opacity: .7;
+        height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        height: 239px;
+        padding: 0;
+    }
+}
+
+@keyframes fade {
+    from {opacity: .4 }
+    to {opacity: 1}
 }

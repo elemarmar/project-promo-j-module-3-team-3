@@ -3,9 +3,11 @@ html {
   font-size: 16px;
   color: $color-text;
 }
-
-.index__container {
+body {
   height: 100vh;
+}
+.index__container {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

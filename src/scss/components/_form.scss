@@ -1,4 +1,12 @@
 .form {
+  margin-top: 0;
+    @media all and (max-width: 500px) {
+        height: 400px;
+        overflow-y: auto;
+    }
+  @include tablet {
+    margin-top: 0;
+  }
   i {
     display: inline-block;
     font-size: 1.4rem;
@@ -30,6 +38,8 @@
 
   input {
     padding-left: 10px;
+    margin-right: 2px;
+    margin-left: 2px;
     &::placeholder {
       color: $color-placeholder;
     }
@@ -62,6 +72,7 @@
     &--title {
       cursor: pointer;
       display: flex;
+      cursor: pointer;
 
       h3 {
         text-transform: uppercase;
@@ -212,12 +223,22 @@
       }
     }
 
-    .btn-tickimage {
+    .action__image-preview {
+      display: flex;
+      position: relative;
+    }
+    .action,
+    .profile {
+      display: inline-block;
+    }
+    .profile__preview {
       border: 1px solid $color-palete1-light;
       height: 30px;
       width: 30px;
       margin-left: 20px;
       display: inline-block;
+      background-size: cover;
+      background-position: center;
     }
   }
 
@@ -226,9 +247,9 @@
     line-height: 30px;
     border: 1px solid $color-palete1-light;
     &:focus {
-      border: 1px solid $color-palete1-light;
+      border: 1px solid rgb(46, 158, 147);
       outline: none;
-      box-shadow: 0 0 4px 0 rgba($color-palete1-light, 0.9);
+      box-shadow: 0 0 4px 0 rgba(46, 158, 147, 0.9);
     }
   }
   .container-image {
@@ -337,19 +358,25 @@
 }
 
 .form .hidden {
-  // opacity: 0;
-  // animation: shrinkUp .5s ease forwards;
   display: none;
-  // transform-origin: top center;
 }
 
 .js-collapsibleChild {
-  animation: growDown 3s ease forwards;
   transform-origin: top center;
   opacity: 1;
   overflow: hidden;
 }
+.fill-box {
+    animation: growFill .9s ease forwards;
+  }
 
+  .palettes__container {
+    animation: growDesign .7s ease forwards;
+  }
+
+  .share__container--button {
+    animation: growShare .7s ease forwards; 
+  }
 /**************************
 *   Colores palettes      *
 **************************/
@@ -375,6 +402,10 @@
     .social--item a {
       border-color: $color-palete1-light;
       color: $color-palete1-dark;
+
+      &:hover {
+        background-color: $color-palete1-light;
+      }
     }
   }
 }
@@ -400,6 +431,11 @@
     .social--item a {
       border-color: $color-palete2-light;
       color: $color-palete2-dark;
+
+      &:hover {
+        background-color: $color-palete2-light;
+        color: white;
+      }
     }
   }
 }
@@ -424,6 +460,10 @@
     .social--item a {
       border-color: $color-palete3-light;
       color: $color-palete3-dark;
+
+      &:hover {
+        background-color: $color-palete3-light;
+      }
     }
   }
 }
@@ -456,7 +496,17 @@
   animation: animatedBackground 2s ease;
 }
 
-/*-----*/
+.card__viewer--social {
+  .social--item a {
+    border-color: $color-palete4-light;
+    color: $color-palete4-dark;
+
+    &:hover {
+      background-color: $color-palete4-light;
+      color: white;
+    }
+  }
+}
 
 .hide-design {
   animation: shrinkDesign 1s ease forwards;
@@ -468,4 +518,39 @@
 
 .hide-share {
   animation: shrinkShare 1s ease forwards;
+}
+
+.animate-design {
+  animation: shrinkDesign 1s ease forwards;
+}
+
+.animate-fill {
+  animation: shrinkFill 1s ease forwards;
+}
+
+.animate-share {
+  animation: shrinkShare 1s ease forwards;
+}
+
+
+
+input:required,
+input:invalid {
+    box-shadow: none;
+    background-color: rgba(140, 0, 255, 0.027);
+    border-color: rgb(140, 0, 255);
+    outline: none;
+    position: relative;
+}
+
+input:valid {
+    box-shadow: none;
+    background-color: rgba(0, 255, 179, 0.027);
+    border-color: rgb(36, 201, 151);
+    outline: none;
+    position: relative;
+}
+
+.palettes__container label {
+    cursor: pointer;
 }

@@ -22,10 +22,10 @@
                   type="radio"
                   class="palette"
                   id="palette1"
-                  checked="checked"
                   value="1"
                   name="palette"
-                  required />
+                  required 
+                  checked/>
                 <div class="palette__color"></div>
                 <div class="palette__color"></div>
                 <div class="palette__color"></div
@@ -96,7 +96,7 @@
           <label for="name">Nombre completo</label>
           <input
             type="text"
-            placeholder="Ej: Sally Jill"
+            placeholder="Ej: Tentáculo Morado"
             id="name"
             name="name"
             required
@@ -111,24 +111,43 @@
             required
           />
 
-          <label for="profile-image">Imagen de perfil</label>
-          <div class="btn-container">
-            <input
-              class="btn"
-              type="file"
-              id="profile-image"
-              name="photo"
-              value="Añadir imagen"
-            />
-            <button type="btn" class="btn-addimage">Añadir imagen</button>
-            <div class="btn-tickimage"></div>
+          <label for="img-selector">Imagen de perfil</label>
+          <!-- De aquí -->
+
+          <div class="action__image-preview">
+            <div class="action">
+              <button
+                class="action__upload-btn js__profile-trigger btn-addimage"
+                type="button"
+              >
+                Añadir imagen
+              </button>
+              <input
+                type="file"
+                name=""
+                id="img-selector"
+                class="action__hiddenField js__profile-upload-btn"
+              />
+            </div>
+            <div class="profile">
+              <!--btn-container -->
+              <div
+                class="profile__image js__profile-image"
+                style="
+                  background-image: url(https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE);
+                "
+              ></div>
+              <div class="profile__preview js__profile-preview"></div>
+            </div>
           </div>
+
+          <!-- Aquí -->
 
           <label for="email">Email</label>
           <input
             class="email"
             type="email"
-            placeholder="Ej: sally-hill@gmail.com"
+            placeholder="Ej: tentaculo@morado.com"
             id="email"
             name="email"
             pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
@@ -139,26 +158,30 @@
           <input
             class="phone"
             type="tel"
-            placeholder="Ej: 555-55-55-55"
+            placeholder="Ej: 690902412"
             id="phone"
             name="phone"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{9}"
           />
 
           <label for="linkedin">Linkedin</label>
           <input
             type="text"
-            placeholder="Ej: linkedin.com/in/sally.hill"
+            placeholder="Ej: tentaculus"
             id="linkedin"
             name="linkedin"
+            pattern="[A-Za-z0-9]+"
+            required
           />
 
           <label for="github">Github</label>
           <input
             type="text"
-            placeholder="Ej: @sally-hill"
+            placeholder="Ej: codingtentacle"
             id="github"
             name="github"
+            pattern="[A-Za-z0-9-]+"
+            required
           />
         </div>
       </div>
@@ -176,6 +199,7 @@
         </div>
         <div class="share__container--button js-collapsibleChild hide-share">
           <button
+            type="submit"
             class="button__card btn--disable"
             href=""
             title="Crear tarjeta"
@@ -188,10 +212,10 @@
     </div>
     <div class="carddone js-carddone hidden">
       <h3>La tarjeta ha sido creada</h3>
-      <a class="link__card" href="" title="Enlace de la tarjeta"
+      <a class="link__card" href="" title="Enlace de la tarjeta" 
         >http://www.loquesea.com</a
       >
-      <a class="button__twitter" href="" title="Compartir en Twitter"
+      <a class="button__twitter" href="" title="Compartir en Twitter" target="_blank"
         ><i class="twitter-icon fab fa-twitter"></i>Compartir en twitter
       </a>
     </div>
