@@ -180,6 +180,7 @@ if (buttonReset) {
   
   
   function createCardObject () {
+
     showCardDone();
     createDataObject();
     sendRequest(dataObject);
@@ -187,7 +188,7 @@ if (buttonReset) {
     
   }
   
-  function showCardDone() {
+function showCardDone() {
     if (!buttonCard.hasAttribute("disable")) {
       cardDone.classList.remove("hidden");
       buttonCard.classList.add("btn--disable");
