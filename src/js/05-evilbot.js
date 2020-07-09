@@ -24,9 +24,14 @@ const greetings = [
     `¿Email? ¿Todavía no domináis la telepatía?`,
   ];
 
-inputEmail.addEventListener('blur', function () {
-    evilTalk(emailReaction, 4000);
-  })
+if (inputEmail) {
+    inputEmail.addEventListener('blur', function () {
+        evilTalk(emailReaction, 4000);
+      })
+}
+
+
+
   
   /*~~~~~~~~~  Phone  ~~~~~~~~*/
   const phoneReaction = [
@@ -63,9 +68,15 @@ inputEmail.addEventListener('blur', function () {
     `Ya tienes lo que querías, ¿me puedes dejar en paz?`,
     `Estupendo, ahora tus datos están en mi poder ¡muahaha!`,
   ];
-  buttonCard.addEventListener('click', function () {
-    evilTalk(createCard, 5000);
-  })
+
+if (buttonCard) {
+    buttonCard.addEventListener('click', function () {
+        evilTalk(createCard, 5000);
+      })
+}
+
+ 
+
   
   /*~~~~~~~~~  Reset  ~~~~~~~~*/
   const reset = [
@@ -80,9 +91,14 @@ inputEmail.addEventListener('blur', function () {
     `¡Acabaré contigo y con tu ridículo planeta!`,
   ];
 
-form.addEventListener('keyup', function () {
-    updateMessages();
-})
+if (form) {
+    form.addEventListener('keyup', function () {
+        updateMessages();
+    })
+}
+
+
+
 
 
 function updateMessages() {
@@ -95,9 +111,13 @@ function updateMessages() {
         `Encantado, <b>${inputName.value}</b>, me alegra conocer tu nombre antes de acabar contigo`,
     ];
     // Reacción a name
-    inputName.addEventListener('blur', function () {
-        evilTalk(name, 4000);
-    });
+
+
+        inputName.addEventListener('blur', function () {
+            evilTalk(name, 4000);
+        });
+
+
   
   
     /*~~~~~~~~~  Job  ~~~~~~~~*/
@@ -175,6 +195,8 @@ function evilTalk(text, seconds) {
 
       /*~~~~~~~~~  LocalStorage  ~~~~~~~~*/
   // Reacción si hay localStorage: algo tipo me acuerdo de ti, o algo así
+
+if (form) {
     if (JSON.parse(localStorage.getItem('userData')).name) {
         evilTalk(greetings, 5000);
         const name = JSON.parse(localStorage.getItem('userData')).name;
@@ -189,19 +211,27 @@ function evilTalk(text, seconds) {
 // Saludo nada más cargar la página
     evilTalk(greetings, 4000);
     }
+  }
+
 
 
 
 // Reacción a hacer hover sobre el tentáculo
-evilBot.addEventListener('mouseover', function () {
-    evilTalk(hooverBoot, 4000);
-});
+if (evilBot) {
+    evilBot.addEventListener('mouseover', function () {
+        evilTalk(hooverBoot, 4000);
+    });
+}
+
 
 
 // Reacción a reset
-buttonReset.addEventListener('click', function () {
-    evilTalk(reset, 4000);
-});
+if (buttonReset) {
+    buttonReset.addEventListener('click', function () {
+        evilTalk(reset, 4000);
+    });
+}
+
 
 // Reacción a paletas
 
