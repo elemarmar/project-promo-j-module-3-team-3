@@ -1,15 +1,16 @@
 .card-generator {
   height: 100vh;
+
 }
 
 .main__card-generator {
   background-image: linear-gradient(to bottom, #f5f5f5, #ffffff 9%);
+  border-bottom: 1px solid $color-border;
 
   .card-generator__wrapper {
     display: grid;
     max-width: 768px;
     margin: auto;
-    border: solid 1px blue;
 
     @include tablet {
       grid-template-columns: 399px 329px;
@@ -43,29 +44,5 @@
         grid-column: 1 / 2;
       }
     }
-  }
-}
-
-// Evil bot
-.evil-bot__container {
-  position: fixed;
-  border: solid 1px red;
-  bottom: 80px;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  z-index: 10;
-  background-image: url("../images/stop.png");
-  background-size: contain;
-  background-position: center;
-
-  @media all and (max-width: 768px) {
-    // Appear when scroll...
-
-    bottom: 358px;
-  }
-
-  &:hover {
-    background-image: url("../images/talk.gif");
   }
 }

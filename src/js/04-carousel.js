@@ -8,7 +8,7 @@
 let slideIndex = 1;
 
 function showSlide(n) {
-  let slides = document.querySelectorAll(".js-slide");
+  let slides = document.querySelectorAll('.js-slide');
 
   if (n >= slides.length) {
     slideIndex = 0;
@@ -18,31 +18,45 @@ function showSlide(n) {
 
   // esconder todos
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].style.display = 'none';
   }
 
   // mostrar elegido
-  slides[slideIndex].style.display = "flex";
+  slides[slideIndex].style.display = 'flex';
 }
 
 // Slide posición 1 se muestra (demás -> hidden)
 // ---> next -->> mostrar slide posición (posición actual + 1)
 // ---> prev -->> mostrar slide posición (posición actual - 1)
 
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
 
 // Next: +1
-next.addEventListener("click", function () {
-  plusSlide(1);
-});
+
+if (next) {
+  next.addEventListener('click', function () {
+    plusSlide(1);
+  });
+}
 
 // Prev: -1
-prev.addEventListener("click", function () {
-  plusSlide(-1);
-});
-
+if (prev) {
+  prev.addEventListener('click', function () {
+    plusSlide(-1);
+  });
+}
 // Actualizar index
 function plusSlide(n) {
+  clearInterval(timer);
   showSlide((slideIndex += n));
+}
+
+// Automation:
+
+let timer;
+if (prev) {
+  timer = setInterval(function () {
+    showSlide((slideIndex += 1));
+  }, 4000);
 }

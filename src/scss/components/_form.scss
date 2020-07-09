@@ -1,6 +1,9 @@
 .form {
   margin-top: 0;
-
+    @media all and (max-width: 500px) {
+        height: 400px;
+        overflow-y: auto;
+    }
   @include tablet {
     margin-top: 0;
   }
@@ -35,6 +38,8 @@
 
   input {
     padding-left: 10px;
+    margin-right: 2px;
+    margin-left: 2px;
     &::placeholder {
       color: $color-placeholder;
     }
@@ -242,9 +247,9 @@
     line-height: 30px;
     border: 1px solid $color-palete1-light;
     &:focus {
-      border: 1px solid $color-palete1-light;
+      border: 1px solid rgb(46, 158, 147);
       outline: none;
-      box-shadow: 0 0 4px 0 rgba($color-palete1-light, 0.9);
+      box-shadow: 0 0 4px 0 rgba(46, 158, 147, 0.9);
     }
   }
   .container-image {
@@ -357,12 +362,21 @@
 }
 
 .js-collapsibleChild {
-  animation: growDown 0.3s ease forwards;
   transform-origin: top center;
   opacity: 1;
   overflow: hidden;
 }
+.fill-box {
+    animation: growFill .9s ease forwards;
+  }
 
+  .palettes__container {
+    animation: growDesign .7s ease forwards;
+  }
+
+  .share__container--button {
+    animation: growShare .7s ease forwards; 
+  }
 /**************************
 *   Colores palettes      *
 **************************/
@@ -516,4 +530,27 @@
 
 .animate-share {
   animation: shrinkShare 1s ease forwards;
+}
+
+
+
+input:required,
+input:invalid {
+    box-shadow: none;
+    background-color: rgba(140, 0, 255, 0.027);
+    border-color: rgb(140, 0, 255);
+    outline: none;
+    position: relative;
+}
+
+input:valid {
+    box-shadow: none;
+    background-color: rgba(0, 255, 179, 0.027);
+    border-color: rgb(36, 201, 151);
+    outline: none;
+    position: relative;
+}
+
+.palettes__container label {
+    cursor: pointer;
 }
