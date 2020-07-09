@@ -197,9 +197,10 @@ function evilTalk(text, seconds) {
   // Reacción si hay localStorage: algo tipo me acuerdo de ti, o algo así
 
 if (form) {
-    if (JSON.parse(localStorage.getItem('userData')).name) {
-        evilTalk(greetings, 5000);
-        const name = JSON.parse(localStorage.getItem('userData')).name;
+    const userDataRaw = localStorage.getItem('userData');
+    const userData = JSON.parse(userDataRaw);
+    if (userData !== null) {
+        const name = userData.name;
         const localStorageReaction = [
             `Vaya, vaya <b>${name}</b> con que de vuelta, ¿eh?`,
             `Parece que no has tenido un buen día, <b>${name}</b>, se te ven las ojeras.`,
@@ -207,7 +208,6 @@ if (form) {
         ];
         evilTalk(localStorageReaction, 5000);
     } else {
-      
 // Saludo nada más cargar la página
     evilTalk(greetings, 4000);
     }
