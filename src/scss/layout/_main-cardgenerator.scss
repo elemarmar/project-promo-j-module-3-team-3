@@ -1,9 +1,11 @@
 .card-generator {
   height: 100vh;
+
 }
 
 .main__card-generator {
   background-image: linear-gradient(to bottom, #f5f5f5, #ffffff 9%);
+  border-bottom: 1px solid $color-border;
 
   .card-generator__wrapper {
     display: grid;

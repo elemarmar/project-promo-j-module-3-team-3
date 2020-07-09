@@ -13,6 +13,7 @@
   @include tablet {
     padding: 0;
     height: 60px;
+    border-top: none;
   }
 
   &__text {

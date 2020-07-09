@@ -10,11 +10,12 @@ const evilBot = document.querySelector('.evil-bot');
 // Aquí arrays que contienen posibles frases por
 // temática
 const greetings = [
-    `Diría que me alegro de verte, pero mentiría`,
-      `Hoy es un gran día para conquistar el mundo`,
-      `Hdsfadsfadsgfdghfsdhgfhgfdh`,
-      `HOLA.`,
-     `EXAMEEEEEN!!!`
+  `Diría que me alegro de verte, pero mentiría`,
+  `Hoy es un gran día para conquistar el mundo`,
+  `¿¡Es que no sabes llamar a la puerta!?`,
+  `Lo que vengas a hacer, hazlo rapidito.`,
+  `¿Necesitas ayuda? Lo siento, pero no me apetece`,
+  `¡Disfruta de nuestras tarjetas! Creo que no me pagan lo suficiente como para decir esto`,
 ];
   
   /*~~~~~~~~~  Email  ~~~~~~~~*/
