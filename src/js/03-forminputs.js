@@ -216,7 +216,7 @@ if (buttonCard){
       phone: inputPhone.value,
       linkedin: inputLinkedin.value,
       github: inputGithub.value,
-        photo: fr.result || JSON.parse(localStorage.getItem("userData")).photo || ''
+        photo: fr.result
     }
   }
   
