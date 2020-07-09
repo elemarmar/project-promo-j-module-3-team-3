@@ -162,9 +162,9 @@ function paintCard(event) {
       
       checkFormValidity();
       storeObject();
+      localStorage.removeItem('userData');
 
 
-      
   }
   
 if (buttonReset) {
@@ -291,8 +291,12 @@ function getFromLocalStorage() {
     
         inputGithub.value = userData.github;
         person.github.href = userData.github;
+        if (userData.photo !== '') {
+            person.photo.style.backgroundImage = `url(${userData.photo})`; 
+        } 
+
         
-        person.photo.style.backgroundImage = `url(${userData.photo})`;
+
 
 
         // Paint Email
