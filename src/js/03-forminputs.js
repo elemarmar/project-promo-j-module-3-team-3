@@ -334,7 +334,6 @@ function checkFormValidity() {
             inputName.value !== "" &&
             inputJob.avlue !== "" &&
             inputEmail.value !== "" &&
-            inputPhone.value !== "" &&
             form.checkValidity() === true
         ) {
               buttonCard.classList.remove("btn--disable");
