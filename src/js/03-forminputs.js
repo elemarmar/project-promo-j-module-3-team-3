@@ -207,7 +207,8 @@ if (buttonCard){
   /*------------------------------------------------*/
   // let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
   
-  function createDataObject() {
+function createDataObject() {
+
     dataObject = {
       palette: checkedPalette,
       name: inputName.value,
@@ -216,7 +217,7 @@ if (buttonCard){
       phone: inputPhone.value,
       linkedin: inputLinkedin.value,
       github: inputGithub.value,
-        photo: fr.result
+        photo: fr.result || getPicLocal()
     }
   }
   
@@ -361,4 +362,15 @@ function checkPalette() {
           checkedPalette = palette.value;
         }
       }
-    }
+}
+    
+
+function getPicLocal() {
+    const userDataRaw = localStorage.getItem('userData');
+    const userData = JSON.parse(userDataRaw);
+    if (userData !== null) {
+        return userData.photo;
+    } else {
+        return '';
+        }
+}
