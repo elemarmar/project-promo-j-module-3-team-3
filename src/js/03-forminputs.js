@@ -390,7 +390,9 @@ function checkProfileImg() {
 
 /*********** */
 
-checkFormValidity();
+if (form) {
+  checkFormValidity();
+}
 
 function closeCollapsable() {
   document.addEventListener('click', checkFormValidity);
