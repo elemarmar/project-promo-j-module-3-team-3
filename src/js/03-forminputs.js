@@ -36,7 +36,6 @@ function changeColors(event) {
   setTimeout(function () {
     background.classList.remove("run-animation");
   }, 1000);
-
 }
 for (const palette of palettes) {
   palette.addEventListener("change", changeColors);
@@ -84,38 +83,37 @@ function paintCard(event) {
 
   // Paint Email
   else if (event.target === inputEmail) {
-      if (inputEmail.value === "" || event.target.checkValidity() === false) {
-        person.email.classList.add("hidden");
-      } else if (event.target.checkValidity() === true) {
-        person.email.href = `mailto:${inputEmail.value}`;
-        person.email.classList.remove("hidden");
-      }
+    if (inputEmail.value === "" || event.target.checkValidity() === false) {
+      person.email.classList.add("hidden");
+    } else if (event.target.checkValidity() === true) {
+      person.email.href = `mailto:${inputEmail.value}`;
+      person.email.classList.remove("hidden");
+    }
 
     // Paint Phone
   } else if (event.target === inputPhone) {
-      if (inputPhone.value === "" || event.target.checkValidity() === false) {
-        person.phone.classList.add("hidden");
-
-      } else if (event.target.checkValidity() === true) {
-        person.phone.href = `tel:${inputPhone.value}`;
-        person.phone.title = inputPhone.value;
-        person.phone.classList.remove("hidden");
+    if (inputPhone.value === "" || event.target.checkValidity() === false) {
+      person.phone.classList.add("hidden");
+    } else if (event.target.checkValidity() === true) {
+      person.phone.href = `tel:${inputPhone.value}`;
+      person.phone.title = inputPhone.value;
+      person.phone.classList.remove("hidden");
     }
 
     //Paint linkedin
   } else if (event.target === inputLinkedin) {
-      if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
-        person.linkedin.classList.add("hidden");
-      } else if (event.target.checkValidity() === true) {
-        person.linkedin.href = `https://www.linkedin.com/in/${inputLinkedin.value}`;
-        person.linkedin.classList.remove("hidden");
+    if (inputLinkedin.value === "" || event.target.checkValidity() === false) {
+      person.linkedin.classList.add("hidden");
+    } else if (event.target.checkValidity() === true) {
+      person.linkedin.href = `https://www.linkedin.com/in/${inputLinkedin.value}`;
+      person.linkedin.classList.remove("hidden");
     }
   } else if (event.target === inputGithub) {
-      if (inputGithub.value === "" || event.target.checkValidity() === false) {
-        person.github.classList.add("hidden");
-      } else if (event.target.checkValidity() === true) {
-        person.github.href = `https://github.com/${inputGithub.value}`;
-        person.github.classList.remove("hidden");
+    if (inputGithub.value === "" || event.target.checkValidity() === false) {
+      person.github.classList.add("hidden");
+    } else if (event.target.checkValidity() === true) {
+      person.github.href = `https://github.com/${inputGithub.value}`;
+      person.github.classList.remove("hidden");
     }
   }
 
@@ -138,12 +136,10 @@ function paintCard(event) {
 }
 
 form.addEventListener("keyup", handleForm);
-function handleForm(){
+function handleForm() {
   paintCard(event);
   storeObject();
 }
-
-
 
 // Resetear el formulario
 const buttonReset = document.querySelector(".btn--reset");
@@ -186,15 +182,11 @@ buttonReset.addEventListener("click", resetForm);
 let dataObject = {};
 let linkTwitter;
 
-
-
-function createCardObject () {
+function createCardObject() {
   showCardDone();
-    createDataObject();
-    console.log(dataObject);
-    sendRequest(dataObject);
-
-
+  createDataObject();
+  console.log(dataObject);
+  sendRequest(dataObject);
 }
 
 function showCardDone() {
@@ -207,94 +199,100 @@ function showCardDone() {
 
 buttonCard.addEventListener("click", createCardObject);
 
-
 /*------------------------------------------------*/
 //                  Crear objeto                  //
 /*------------------------------------------------*/
-let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
+let checkedPalette = document.querySelector(`input[name="palette"]:checked`)
+  .value;
 
 function createDataObject() {
-    dataObject = {
-        palette: checkedPalette,
-        name: inputName.value,
-        job: inputJob.value,
-        email: inputEmail.value,
-        phone: inputPhone.value,
-        linkedin: inputLinkedin.value,
-        github: inputGithub.value,
-        photo: fr.result
-    }
+  dataObject = {
+    palette: checkedPalette,
+    name: inputName.value,
+    job: inputJob.value,
+    email: inputEmail.value,
+    phone: inputPhone.value,
+    linkedin: inputLinkedin.value,
+    github: inputGithub.value,
+    photo: fr.result,
+  };
 }
 
 // Mandar request
-function sendRequest(json){
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(json),
-      headers: {
-        'content-type': 'application/json'
-      },
+function sendRequest(json) {
+  fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+    method: "POST",
+    body: JSON.stringify(json),
+    headers: {
+      "content-type": "application/json",
+    },
+  })
+    .then(function (resp) {
+      return resp.json();
     })
-      .then(function(resp) { return resp.json(); })
-      .then(function(result) { showURL(result); })
-      .catch(function(error) { console.log(error); });
+    .then(function (result) {
+      showURL(result);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 // Mostrar URL
-const linkCard = document.querySelector('.link__card');
+const linkCard = document.querySelector(".link__card");
 
-function showURL(result){
+function showURL(result) {
   if (result.success) {
-      linkTwitter = result.cardURL;
-      twitterShare(linkTwitter);
-      console.log(linkTwitter);
-  linkCard.innerHTML = '<a href=' + result.cardURL + ' target="_blank">' + result.cardURL + '</a>';
-}else{
-  linkCard.innerHTML = 'Muahaha ¡otro error humano!' + result.error;
-}
+    linkTwitter = result.cardURL;
+    twitterShare(linkTwitter);
+    console.log(linkTwitter);
+    linkCard.innerHTML =
+      "<a href=" +
+      result.cardURL +
+      ' target="_blank">' +
+      result.cardURL +
+      "</a>";
+  } else {
+    linkCard.innerHTML = "Muahaha ¡otro error humano!" + result.error;
+  }
 }
 
-  function twitterShare(urlCard) {
-    const twitterURL = document.querySelector('.button__twitter');
-      twitterURL.href = `http://twitter.com/share?text=Aquí tienes mi Maniac coder's Awesome Profile Cards🖥️&hashtags=adalaber,promoJemison&user_mentions=Adalab_Digital&url=${urlCard}`;
-  }
-  
- 
+function twitterShare(urlCard) {
+  const twitterURL = document.querySelector(".button__twitter");
+  twitterURL.href = `http://twitter.com/share?text=Aquí tienes mi Maniac coder's Awesome Profile Cards🖥️&hashtags=adalaber,promoJemison&user_mentions=Adalab_Digital&url=${urlCard}`;
+}
 
 function storeObject() {
-    createDataObject();
-    localStorage.setItem('userData', JSON.stringify(dataObject));
-};
-
+  createDataObject();
+  localStorage.setItem("userData", JSON.stringify(dataObject));
+}
 
 // al arrancar la página
 function getFromLocalStorage() {
-    const userDataRaw = localStorage.getItem('userData');
-    const userData = JSON.parse(userDataRaw);
-    if (userData !== null) {
-        checkedPalette = userData.palette;
-        console.log(checkedPalette);
+  const userDataRaw = localStorage.getItem("userData");
+  const userData = JSON.parse(userDataRaw);
+  if (userData !== null) {
+    checkedPalette = userData.palette;
+    console.log(checkedPalette);
 
-        inputName.value = userData.name;
-        person.name.innerHTML = userData.name;
+    inputName.value = userData.name;
+    person.name.innerHTML = userData.name;
 
-        inputJob.value = userData.job;
-        person.job.innerHTML = userData.job;
+    inputJob.value = userData.job;
+    person.job.innerHTML = userData.job;
 
-        inputEmail.value = userData.email;
-        person.email.innerHTML = userData.email;
-        
-        inputPhone.value = userData.phone;
-        person.phone.innerHTML = userData.phone;
+    inputEmail.value = userData.email;
+    person.email.innerHTML = userData.email;
 
-        inputLinkedin.value = userData.linkedin;
-        person.linkedin.innerHTML = userData.linkedin;
+    inputPhone.value = userData.phone;
+    person.phone.innerHTML = userData.phone;
 
-        inputGithub.value = userData.github;
-        person.github.innerHTML = userData.github;
-    }
+    inputLinkedin.value = userData.linkedin;
+    person.linkedin.innerHTML = userData.linkedin;
+
+    inputGithub.value = userData.github;
+    person.github.innerHTML = userData.github;
+  }
 }
-
-
 
 getFromLocalStorage();

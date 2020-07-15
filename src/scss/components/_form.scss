@@ -1,9 +1,9 @@
 .form {
   margin-top: 0;
-    @media all and (max-width: 500px) {
-        height: 400px;
-        overflow-y: auto;
-    }
+  @media all and (max-width: 500px) {
+    height: 400px;
+    overflow-y: auto;
+  }
   @include tablet {
     margin-top: 0;
   }
@@ -209,7 +209,7 @@
       cursor: pointer;
     }
 
-    input[type='file'] {
+    input[type="file"] {
       position: absolute;
       top: 0;
       left: 10px;
@@ -299,7 +299,7 @@
         font-weight: 600;
         height: 50px;
         width: 199px;
-        border-radius: 12px;
+        border-radius: 10px;
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
         margin: 30px auto;
         border: none;
@@ -367,16 +367,16 @@
   overflow: hidden;
 }
 .fill-box {
-    animation: growFill .9s ease forwards;
-  }
+  animation: growFill 0.9s ease forwards;
+}
 
-  .palettes__container {
-    animation: growDesign .7s ease forwards;
-  }
+.palettes__container {
+  animation: growDesign 0.7s ease forwards;
+}
 
-  .share__container--button {
-    animation: growShare .7s ease forwards; 
-  }
+.share__container--button {
+  animation: growShare 0.7s ease forwards;
+}
 /**************************
 *   Colores palettes      *
 **************************/
@@ -532,25 +532,23 @@
   animation: shrinkShare 1s ease forwards;
 }
 
-
-
 input:required,
 input:invalid {
-    box-shadow: none;
-    background-color: rgba(140, 0, 255, 0.027);
-    border-color: rgb(140, 0, 255);
-    outline: none;
-    position: relative;
+  box-shadow: none;
+  background-color: rgba(140, 0, 255, 0.027);
+  border-color: rgb(140, 0, 255);
+  outline: none;
+  position: relative;
 }
 
 input:valid {
-    box-shadow: none;
-    background-color: rgba(0, 255, 179, 0.027);
-    border-color: rgb(36, 201, 151);
-    outline: none;
-    position: relative;
+  box-shadow: none;
+  background-color: rgba(0, 255, 179, 0.027);
+  border-color: rgb(36, 201, 151);
+  outline: none;
+  position: relative;
 }
 
 .palettes__container label {
-    cursor: pointer;
+  cursor: pointer;
 }
