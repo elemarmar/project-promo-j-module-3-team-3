@@ -2,7 +2,7 @@
 .evil-bot__container {
     position: absolute;
     // border: solid 1px red;
-    bottom: 80px;
+    top: 780px;
     right: 0;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
     @media all and (max-width: 768px) {
       // Appear when scroll...
         position: absolute;
-        bottom: 353px;
+        top: 520px;
         margin: auto;
     }
 
@@ -25,15 +25,20 @@
   }
   
 
-  .evil-chat {
+  .evil-chat__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: rgba(115, 60, 187, 0.3);
-      height: 60px;
-      width: 300px;
+      min-height: 60px;
+      max-width: 300px;
       border-radius: 6px;
       position: relative;
-      padding: 5px 10px;
+      padding: 5px 20px;
       color: rgb(86, 11, 136);
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+
+      text-align: center;
 
       @media all and (max-width: 410px) {
           width: 250px;
@@ -50,6 +55,7 @@
           transform: translateY(-50%) rotate(45deg);
           background-image: linear-gradient(-130deg, rgba(115, 60, 187,.3) 50%,rgba(0,0,0,0) 50%);
       }
+
   }
 
   .evil-bot {
@@ -59,11 +65,38 @@
     background-size: 50px;
     background-position: center;
     background-repeat: no-repeat;
-
     &:hover {
-        background-image: url("../images/stop.png");
-        background-size: contain;
-        background-position: center;
+        cursor: help;
     }
+
+
+
     // border: solid 1px red;
   }
+
+  .fadeout {
+      animation: fadeout 2s ease forwards;
+  }
+
+  .fadein {
+      animation: fadein 2s ease forwards;
+  }
+
+  @keyframes fadeout {
+      from { opacity: 1}
+      to {opacity: 0}
+  }
+
+  @keyframes fadein {
+    from { opacity: 0}
+    to {opacity: 1}
+}
+
+.talk {
+    background-image: url("../images/stop.png") !important;
+    background-size: contain;
+}
+
+.stop {
+    background-image: url("../images/notalk.png");
+}

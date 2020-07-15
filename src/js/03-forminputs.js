@@ -13,30 +13,30 @@ function changeColors(event) {
   background.classList.add("run-animation");
   if (event.target === palettes[0]) {
     card.classList.add("js-palette1");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette3");
-    card.classList.remove("js-palette4");
+    card.classList.remove("js-palette2", "js-palette3", "js-palette4");
   } else if (event.target === palettes[1]) {
-    card.classList.remove("js-palette3");
+    card.classList.remove("js-palette3", "js-palette1", "js-palette4");
     card.classList.add("js-palette2");
-    card.classList.remove("js-palette1");
-    card.classList.remove("js-palette4");
   } else if (event.target === palettes[2]) {
     card.classList.add("js-palette3");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette1");
-    card.classList.remove("js-palette4");
+    card.classList.remove("js-palette2", "js-palette1", "js-palette4");
   } else if (event.target === palettes[3]) {
     card.classList.add("js-palette4");
-    card.classList.remove("js-palette3");
-    card.classList.remove("js-palette2");
-    card.classList.remove("js-palette1");
+    card.classList.remove("js-palette3", "js-palette2", "js-palette1");
   }
 
   setTimeout(function () {
     background.classList.remove("run-animation");
   }, 1000);
+  for (const palette of palettes) {
+    if (palette.checked) {
+      checkedPalette = palette.value;
+    }
+  }
+  storeObject();
 }
+
+let checkedPalette;
 for (const palette of palettes) {
   palette.addEventListener("change", changeColors);
 }
@@ -51,6 +51,7 @@ const person = {
   phone: document.querySelector(".js-mobile"),
   linkedin: document.querySelector(".js-linkedin"),
   github: document.querySelector(".js-github"),
+  photo: document.querySelector(".card--img"),
 };
 
 const defaultPerson = {
@@ -135,19 +136,25 @@ function paintCard(event) {
   }
 }
 
-form.addEventListener("keyup", handleForm);
-function handleForm() {
-  paintCard(event);
-  storeObject();
+if (form) {
+  form.addEventListener("keyup", handleForm);
+  function handleForm() {
+    paintCard(event);
+    storeObject();
+  }
 }
 
 // Resetear el formulario
 const buttonReset = document.querySelector(".btn--reset");
 
 function resetForm() {
+  localStorage.removeItem("userData");
   document.querySelector(".form").reset();
-  person.name.innerHTML = "Nombre Apellido";
-  person.job.innerHTML = "Front-end developer";
+  person.name.innerHTML = defaultPerson.name;
+  person.job.innerHTML = defaultPerson.job;
+  person.photo.style.backgroundImage =
+    "url('./assets/images/imagen-prueba.jpg')";
+  profilePreview.style.backgroundImage = "none";
 
   if (person.phone.classList.contains(".hidden") === false) {
     person.phone.classList.add("hidden");
@@ -170,12 +177,12 @@ function resetForm() {
   person.github.href = "";
 
   card.classList.add("js-palette1");
-  card.classList.remove("js-palette2");
-  card.classList.remove("js-palette3");
-  card.classList.remove("js-palette4");
+  card.classList.remove("js-palette2", "js-palette3", "js-palette4");
 }
 
-buttonReset.addEventListener("click", resetForm);
+if (buttonReset) {
+  buttonReset.addEventListener("click", resetForm);
+}
 
 //BUTTON CREAR TARJETA
 
@@ -197,13 +204,14 @@ function showCardDone() {
   }
 }
 
-buttonCard.addEventListener("click", createCardObject);
+if (buttonCard) {
+  buttonCard.addEventListener("click", createCardObject);
+}
 
 /*------------------------------------------------*/
 //                  Crear objeto                  //
 /*------------------------------------------------*/
-let checkedPalette = document.querySelector(`input[name="palette"]:checked`)
-  .value;
+// let checkedPalette = document.querySelector(`input[name="palette"]:checked`).value;
 
 function createDataObject() {
   dataObject = {
@@ -272,27 +280,50 @@ function getFromLocalStorage() {
   const userDataRaw = localStorage.getItem("userData");
   const userData = JSON.parse(userDataRaw);
   if (userData !== null) {
-    checkedPalette = userData.palette;
-    console.log(checkedPalette);
+    for (let i = 0; i < palettes.length; i++) {
+      if (palettes[i].value === userData.palette) {
+        palettes[i].checked = true;
+        card.className = "card__viewer";
+        card.classList.add(`js-palette${parseInt(i) + parseInt(1)}`);
+      }
+    }
 
     inputName.value = userData.name;
-    person.name.innerHTML = userData.name;
+    person.name.innerHTML = inputName.value
+      ? userData.name
+      : defaultPerson.name;
 
     inputJob.value = userData.job;
-    person.job.innerHTML = userData.job;
+    person.job.innerHTML = inputJob.value ? userData.job : defaultPerson.job;
 
     inputEmail.value = userData.email;
-    person.email.innerHTML = userData.email;
+    person.email.href = userData.email;
 
     inputPhone.value = userData.phone;
-    person.phone.innerHTML = userData.phone;
+    person.phone.href = userData.phone;
 
     inputLinkedin.value = userData.linkedin;
-    person.linkedin.innerHTML = userData.linkedin;
+    person.linkedin.href = userData.linkedin;
 
     inputGithub.value = userData.github;
-    person.github.innerHTML = userData.github;
+    person.github.href = userData.github;
+
+    // Paint Email
+    if (inputEmail.value !== "") {
+      person.email.classList.remove("hidden");
+    }
+    if (inputPhone.value !== "") {
+      person.phone.classList.remove("hidden");
+    }
+    if (inputLinkedin.value !== "") {
+      person.linkedin.classList.remove("hidden");
+    }
+    if (inputGithub.value !== "") {
+      person.github.classList.remove("hidden");
+    }
   }
 }
 
-getFromLocalStorage();
+if (form) {
+  getFromLocalStorage();
+}
