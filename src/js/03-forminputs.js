@@ -328,7 +328,6 @@ function checkFormValidity() {
   ) {
     /// función cierra colapsable
     console.log('Chequeando form');
-    debugger;
     closeCollapsable();
     buttonCard.classList.remove('btn--disable');
     buttonCard.classList.add('btn--enable');
@@ -390,7 +389,11 @@ function checkProfileImg() {
 }
 
 /*********** */
+
+checkFormValidity();
+
 function closeCollapsable() {
+  document.addEventListener('click', checkFormValidity);
   const colArrow = document.querySelectorAll('.js-collapsibleParent > .arrow');
   const colBox = document.querySelectorAll('.js-collapsibleChild');
 
@@ -398,9 +401,11 @@ function closeCollapsable() {
   let trueFalseInputs = [];
   for (let i = 0; i < allInputs.length; i++) {
     const result = allInputs[i] === document.activeElement;
+    console.log(result);
     trueFalseInputs.push(result);
   }
-  const hasFalse = trueFalseInputs.findIndex((element) => element === false);
+  const hasFalse = trueFalseInputs.findIndex((element) => element === true);
+  console.log(hasFalse);
   if (hasFalse === -1) {
     colBox[0].classList.add('hide-design');
     colBox[1].classList.add('hide-fill');
@@ -410,7 +415,6 @@ function closeCollapsable() {
     colArrow[1].classList.remove('arrow-active');
     colArrow[2].classList.toggle('arrow-active');
     card.classList.remove('large');
-  } else {
-    //
+    document.removeEventListener('click', checkFormValidity);
   }
 }
